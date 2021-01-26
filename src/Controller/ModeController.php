@@ -14,7 +14,7 @@ class ModeController extends AbstractController
     public function index(): Response
     {
         return $this->render('mode/index.html.twig', [
-            'controller_name' => 'ModeController',
+            'name' => 'Mode Product',
         ]);
     }
 }

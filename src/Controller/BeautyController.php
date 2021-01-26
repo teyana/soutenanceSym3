@@ -14,7 +14,8 @@ class BeautyController extends AbstractController
     public function index(): Response
     {
         return $this->render('beauty/index.html.twig', [
-            'controller_name' => 'BeautyController',
+            'name' => 'Beauty Product
+        ',
         ]);
     }
 }

@@ -14,7 +14,7 @@ class FoodController extends AbstractController
     public function index(): Response
     {
         return $this->render('food/index.html.twig', [
-            'controller_name' => 'FoodController',
+            'name' => 'Food product',
         ]);
     }
 }
