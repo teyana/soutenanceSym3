@@ -21,4 +21,11 @@ class BeautyController extends AbstractController
             
         ]);
     }
+    /**
+     * @Route("/beauty/15", name="beauty_detail")
+     */
+
+     public function show(){
+         return $this->render('beauty/detail.html.twig');
+     }
 }

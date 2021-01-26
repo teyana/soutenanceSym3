@@ -20,4 +20,11 @@ class FoodController extends AbstractController
             'origin' => 'Mali'
         ]);
     }
+     /**
+     * @Route("/food/15", name="food_detail")
+     */
+
+    public function show(){
+        return $this->render('food/detail.html.twig');
+    }
 }

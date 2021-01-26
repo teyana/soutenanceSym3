@@ -20,4 +20,11 @@ class ModeController extends AbstractController
             'origin' => 'Egypte'
         ]);
     }
+     /**
+     * @Route("/mode/15", name="mode_detail")
+     */
+
+    public function show(){
+        return $this->render('mode/detail.html.twig');
+    }
 }
