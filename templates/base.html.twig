@@ -1,54 +1,81 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="stylesheet" href="https://bootswatch.com/4/simplex/bootstrap.min.css">
-        {% block stylesheets %}{% endblock %}
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			{% block title %}Welcome!
+			{% endblock %}
+		</title>
+		<link rel="stylesheet" href="https://bootswatch.com/4/simplex/bootstrap.min.css"> {% block stylesheets %}{% endblock %}{% block javascripts %}{% endblock %}
+		</head>
 
-        {% block javascripts %}{% endblock %}
-    </head>
+		<body>
+			{# la navbar est ici #}
 
-    <body>
-        {# la navbar est ici #}
-        
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">Navbar</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+			<nav class="navbar navbar-expand-lg navbar-light bg-light">
+				<a class="navbar-brand" href="#">Navbar</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
 
-            <div class="collapse navbar-collapse row justify-content-end" id="navbarColor03">
-                <ul class="navbar-nav ">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="/">Home</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="/store" role="button" aria-haspopup="true" aria-expanded="false">Store</a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="/mode">Mode</a>
-                            <a class="dropdown-item" href="/beauty">Cosmetique</a>
-                            
-                            <div class="dropdown-divider"></div>
-                            {# separataur de menu ^ #}
-                            <a class="dropdown-item" href="/food">Alimentation</a>
-                            
-                            
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/blog">Blog</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/contact">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/bucket">Panier</a>
-                    </li>
-                    
-                </ul>
-            </div>
-        </nav>
-        {% block body %}{% endblock %}
-    </body>
-</html>
+				<div class="collapse navbar-collapse row justify-content-end" id="navbarColor03">
+					<ul class="navbar-nav ">
+						<li class="nav-item active">
+							<a class="nav-link" href="/">Home</a>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="/store" role="button" aria-haspopup="true" aria-expanded="false">Store</a>
+							<div class="dropdown-menu">
+								<a class="dropdown-item" href="/mode">Mode</a>
+								<a class="dropdown-item" href="/beauty">Cosmetique</a>
+
+								<div class="dropdown-divider"></div>
+								{# separataur de menu ^ #}
+								<a class="dropdown-item" href="/food">Alimentation</a>
+
+
+							</div>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/blog">Blog</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/contact">Contact</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/bucket">Panier</a>
+						</li>
+
+					</ul>
+				</div>
+			</nav>
+
+			<div class="container"> {% block body %}{% endblock %}
+				</div>
+
+				<footer class="bg-dark text-white">
+					<div class="d-flex justify-content-around">
+						<div style="width: 18rem;">
+							<p class="card-text">
+								<small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet incidunt ea numquam laboriosam! Dolores iusto, rem facilis quasi aut quam quidem placeat illum facere quo quos provident vel veritatis similique!</small>
+							</p>
+						</div>
+						<div style="width: 18rem;">
+							<p class="card-text">
+								<small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet incidunt ea numquam laboriosam! Dolores iusto, rem facilis quasi aut quam quidem placeat illum facere quo quos provident vel veritatis similique!</small>
+							</p>
+						</div>
+						<div style="width: 18rem;">
+							<p class="card-text">
+								<small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet incidunt ea numquam laboriosam! Dolores iusto, rem facilis quasi aut quam quidem placeat illum facere quo quos provident vel veritatis similique!</small>
+							</p>
+						</div>
+					</div>
+					<br>
+					<p>
+						<small>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse debitis a, ad nulla molestiae laboriosam aspernatur veritatis quod possimus rerum placeat nisi? Sint atque cupiditate, id eveniet mollitia saepe recusandae? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat sunt porro nesciunt incidunt consequuntur dolores molestias ab illum, itaque aperiam eius voluptates eligendi quibusdam nemo vitae eveniet quia doloribus ullam?</small>
+					</p>
+				</footer>
+
+			</body>
+		</html>
