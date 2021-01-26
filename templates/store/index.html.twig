@@ -6,38 +6,79 @@
 
     <h1 >{{ title }}</h1>
 {#
------XXXXmake 3 space grid
-------> With white layer display==on hover(opacity==60%) with the title opacity 100% 
--------> [desktop] on hover show some products
--------> mobile on click go to product page 
+-----> Refaire la page 
+    Catalogue affichage de tout les produits
+    Afficher 4 cartes par lignes
+
 #}
     <div class="container">
-    <div class="row">
-        <div class="col-sm">
-            <a href="/mode">
-                <figure>
-                    <img src="https://placehold.it/250x450 " alt="">
-                    <h2>MODE</h2>
-                </figure>
-            </a>
+        <div class = "d-flex justify-content-around p-2" >
+
+                <div class="card" style="width: 14rem;">
+                    <img src="https://placehold.it/280x300 " class="card-img-top" alt="...">
+                    <div class="card-body d-flex justify-content-evenly p-2">
+                        <div class="col-9">
+                            <p class="name">{{name }}</p>
+                            <p class="origine">{{ origin }}</p>
+                        </div>
+                        <div class="col-5">
+                            <p class="prix">{{ price }}</p>
+                            <a href="{{ path('mode_detail')}}">
+                                <button type="button" class="btn btn-warning">VOIR +</button>
+                            </a>
+                        </div>
+                        {# <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> #}
+                    </div>
+                </div>
+                <div class="card" style="width: 14rem;">
+                    <img src="https://placehold.it/280x300" class="card-img-top" alt="...">
+                    <div class="card-body d-flex justify-content-evenly p-2">
+                        <div class="col-9">
+                            <p class="name">{{name }}</p>
+                            <p class="origine">{{ origin }}</p>
+                        </div>
+                        <div class="col-5">
+                            <p class="prix">{{ price }}</p>
+                            <a href="{{ path('mode_detail')}}">
+                                <button type="button" class="btn btn-warning">VOIR +</button>
+                            </a>
+                        </div>
+                        {# <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> #}
+                    </div>
+                </div>
+                <div class="card" style="width: 14rem;">
+                    <img src="https://placehold.it/280x300" class="card-img-top" alt="...">
+                    <div class="card-body d-flex justify-content-evenly p-2">
+                        <div class="col-9">
+                            <p class="name">{{name }}</p>
+                            <p class="origine">{{ origin }}</p>
+                        </div>
+                        <div class="col-5">
+                            <p class="prix">{{ price }}</p>
+                            <a href="{{ path('mode_detail')}}">
+                                <button type="button" class="btn btn-warning">VOIR +</button>
+                            </a>
+                        </div>
+                        {# <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> #}
+                    </div>
+                </div>
+                <div class="card" style="width: 14rem;">
+                    <img src="https://placehold.it/280x300" class="card-img-top" alt="...">
+                    <div class="card-body d-flex justify-content-evenly p-2">
+                        <div class="col-9">
+                            <p class="name">{{name }}</p>
+                            <p class="origine">{{ origin }}</p>
+                        </div>
+                        <div class="col-5">
+                            <p class="prix">{{ price }}</p>
+                            <a href="{{ path('mode_detail')}}">
+                                <button type="button" class="btn btn-warning">VOIR +</button>
+                            </a>
+                        </div>
+                        {# <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> #}
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="col-sm">
-            <a href="/food">
-                <figure>
-                    <img src="https://placehold.it/250x450 " alt="">
-                    <h2> ALIMENTATION</h2>
-                </figure>
-            </a>
-        </div>
-        <div class="col-sm">
-            <a href="/beauty">
-                <figure>
-                    <img src="https://placehold.it/250x450 " alt="">
-                    <h2>COSMETIQUE</h2>
-                </figure>
-            </a>
-        </div>
-    </div>
-    </div>
 
 {% endblock %}
