@@ -1,0 +1,154 @@
+/* CSS du template de base. A ne pas toucher, c'est pour le header et footer */
+
+* {
+    box-sizing: border-box;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+
+/* Retirer toutes décoration des listes */
+
+ul {
+    list-style: none;
+}
+
+
+/* header */
+
+.head_nav {
+    display: flex !important;
+    justify-content: space-between;
+    padding: 1em;
+    border-bottom: 1px solid lightgray;
+}
+
+
+/* Parti logo */
+
+.espace_logo {
+    display: flex;
+}
+
+.espace_logo p {
+    font-size: 2.5em;
+    align-self: center;
+    font-weight: bold;
+    margin-bottom: 0px;
+    padding: 0 1em;
+}
+
+.espace_logo img {
+    width: 8em;
+    height: 5em;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
+/* menu */
+
+button .navbar-toggler,
+span .navbar-toggler-icon {
+    color: #000000 !important;
+}
+
+.espace_liens {
+    align-content: center;
+}
+
+.menu_liens {
+    align-self: center;
+    border: none;
+}
+
+
+/* Peronnalisation des liens:hover du menu */
+
+.espace_liens a:hover {
+    text-decoration: none !important;
+    border-bottom: 3px solid orangered;
+    color: black !important;
+}
+
+.menu_liens a {
+    color: black;
+    margin-right: 1em;
+    font-size: 2em;
+}
+
+.dropdown-item:hover {
+    border: none !important;
+    background-color: rgba(255, 69, 0, 0.1);
+}
+
+.dropdown-menu {
+    padding: 0;
+}
+
+.menu_icones {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1em;
+}
+
+.menu_icones a {
+    display: flex;
+    color: black;
+    font-size: 1em;
+    margin-right: 1.5em;
+}
+
+.menu_icones a p {
+    margin-right: 0.5em;
+    margin-bottom: 0;
+}
+
+.menu_icones a i {
+    padding-top: 0.15em;
+}
+
+
+/* En dessous de 1000px */
+
+@media screen and (max-width: 1150px) {
+    .menu_liens {
+        text-align: center;
+    }
+    .menu_liens a:hover {
+        border: none;
+        background-color: rgba(255, 69, 0, 0.1);
+    }
+    .espace_logo {
+        display: block;
+    }
+}
+
+
+/* En dessous de 990px */
+
+@media screen and (max-width: 990px) {
+    .espace_logo p {
+        font-size: 1.5em;
+        align-self: start;
+    }
+    .espace_liens {
+        display: flex;
+        align-self: end;
+    }
+    .menu_liens a {
+        font-size: 1.5em;
+    }
+    .menu_icones {
+        padding-top: 1em;
+        /* font-size: 1.5em; */
+    }
+}
+
+
+/* En dessous de 500px */
+
+@media screen and (max-width: 500px) {
+    .espace_logo p {
+        font-size: 1em;
+    }
+}
