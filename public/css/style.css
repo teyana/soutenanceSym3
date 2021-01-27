@@ -112,6 +112,54 @@ ul {
 
 
 /*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+
+#footer {
+    border-top: 1px solid #000000;
+}
+
+#footer .social-links a {
+    font-size: 18px;
+    display: inline-block;
+    /* background: #ecd8cc; */
+    color: #000000;
+    line-height: 1;
+    padding: 8px 0;
+    margin-right: 4px;
+    /* border-radius: 50%; */
+    border: 1px solid #000000;
+    text-align: center;
+    width: 36px;
+    height: 36px;
+    transition: 0.3s;
+}
+
+#footer .social-links a:hover {
+    /* background: #ecd8cc; */
+    color: #000000;
+    border: 1px solid #ff4500;
+    text-decoration: none;
+}
+
+#footer .copyright {
+    text-align: center;
+    margin-top: 15px;
+}
+
+#footer .copyright span {
+    color: #ff4500;
+}
+
+#footer .credits {
+    padding-top: 5px;
+    text-align: center;
+    font-size: 13px;
+    color: #eaebf0;
+}
+
+
+/*--------------------------------------------------------------
     Responsive
 --------------------------------------------------------------*/
 

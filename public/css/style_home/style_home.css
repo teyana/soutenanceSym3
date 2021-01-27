@@ -26,6 +26,27 @@
 --------------------------------------------------------------*/
 
 
+/* Titre de la section */
+
+h1 {
+    text-align: center;
+    padding-top: 0.5em;
+    font-size: 5em;
+}
+
+#portfolio {
+    margin: 2em;
+}
+
+.section_vente img {
+    border: 1px solid black;
+}
+
+.section_vente .portfolio-item {
+    margin-bottom: 30px;
+}
+
+
 /* Gérer le figcaption */
 
 figcaption {
@@ -58,29 +79,6 @@ figcaption a {
 figcaption a:hover {
     color: #000000;
     border-bottom: 1px solid #ff4500;
-}
-
-
-/*--------------------------------------------------------------
-    Deuxième section: Section meilleur vente
---------------------------------------------------------------*/
-
-#portfolio {
-    margin: 1em;
-}
-
-.section_vente img {
-    border: 1px solid black;
-}
-
-.section_vente .portfolio-item {
-    margin-bottom: 30px;
-}
-
-h1 {
-    text-align: center;
-    padding-top: 0.5em;
-    font-size: 5em;
 }
 
 
