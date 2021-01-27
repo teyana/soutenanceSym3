@@ -79,6 +79,22 @@
                     {# <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> #}
                 </div>
             </div>
+            <div class="card" style="width: 18rem;">
+                <img src="https://placehold.it/280x300" class="card-img-top" alt="...">
+               <div class="card-body d-flex justify-content-evenly p-2">
+                    <div class="col-9">
+                        <p class="name">{{name }}</p>
+                        <p class="origine">{{ origin }}</p>
+                    </div>
+                    <div class="col-3">
+                        <p class="prix">{{ price }}</p>
+                        <a href="{{ path('mode_detail')}}">
+                            <button type="button" class="btn btn-warning">VOIR +</button>
+                        </a>
+                    </div>
+                    {# <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> #}
+                </div>
+            </div>
         </div>
 
     </main>

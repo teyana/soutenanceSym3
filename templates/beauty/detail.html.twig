@@ -1,1 +1,105 @@
 {% extends "base.html.twig" %}
+
+{% block body %}
+    <main class = "container">
+        <div class = "d-flex">
+            <div class = "col text-center p-3" ><img src="https://placehold.it/600x500" width="75%" alt="..."></div>
+            <div class = "col text-center p-5">
+                <h3 class="font-weight-bold">{{ title}}</h3>
+                <h4 class="font-weight-bold">{{ price }} €</h4>
+                <p>{{ description }}</p></div>
+            <div></div>
+        </div>
+        <br>
+        <hr>
+        <br>
+        <div class= "container d-flex">
+            <div class="col-3">
+                <button type="button" class="btn btn-warning">Ajouter au panier</button>   
+            </div> 
+            <div class="col-3">
+                <input type="text" class="form-control" placeholder="Last name" aria-label="Last name">
+            </div>
+        </div>
+        <br>
+        <hr>
+        <br>
+        <div id="presProduit" class = "d-flex">
+            <div class = "col p-5 mt-5">
+                <dl class="row">
+                    <dt class="col-sm-3">Pays d'origine :</dt>
+                    <dd class="col-sm-9">{{ origin }}</dd>
+
+                    <dt class="col-sm-3">Exploitation :</dt>
+                    <dd class="col-sm-9">Lorem ipsum dolor sit.</dd>
+
+                    <dt class="col-sm-3">Variété :</dt>
+                    <dd class="col-sm-9">Etiam porta sem malesuada magna mollis euismod.</dd>
+
+                </dl>
+            </div>
+            <div class = "col text-center p-1" ><img src="images/plante.jpeg" width="75%" alt="..."></div>
+        </div>
+        <h5>Histoire du produit :</h5>
+        <p>{{story}}</p>
+        <br>
+        <ul class="nav nav-tabs justify-content-between">
+            <li class="nav-item">
+                <a class="nav-link btn btn-warning" href="#">Fiche Technique</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link btn btn-warning" href="#">Commentaires</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link btn btn-warning" href="#">Lorem ipsum dolor</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link btn btn-warning" href="#" >Lorem ipsum</a>
+            </li>
+        </ul>
+        <br>
+        <br>
+        <div class="d-grid gap-2 col-6 mx-auto">
+            <button type="button" class="btn btn-secondary">Ecrire un commentaire !</button>
+        </div>
+        <div class = "col p-5 mt-5">
+            <dl class="row">
+                <dt class="col-sm-3">Pseudo</dt>
+
+                <dd class="col-sm-3">22/05/2020</dd>
+                
+                <dd class="col-sm-9">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, excepturi aperiam! Nulla corrupti aperiam provident molestias voluptatem, perferendis repellendus velit deleniti modi dolorem similique, amet debitis magnam dicta laborum temporibus! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate eos libero culpa laudantium nisi beatae sequi rerum vel doloremque voluptatem, hic obcaecati! Vel deleniti dolores sapiente aspernatur repellat tempore corporis.</dd>
+            </dl>
+        </div>
+        <hr>
+        <h4 class = "text-center m-4">Produits similaires :</h4>
+        <hr>
+        <div class = "d-flex justify-content-between">
+            <img src="https://placehold.it/200x200" class="img-thumbnail" alt="...">
+            <img src="https://placehold.it/200x200" class="img-thumbnail" alt="...">
+            <img src="https://placehold.it/200x200" class="img-thumbnail" alt="...">
+            <img src="https://placehold.it/200x200" class="img-thumbnail" alt="...">
+        </div>
+        <hr>
+    </main>
+    
+{% endblock %}
+{% block footer%}
+     <footer>
+        <div class = "d-flex justify-content-around">
+             <div  style="width: 18rem;">
+                <p class="card-text"><small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet incidunt ea numquam laboriosam! Dolores iusto, rem facilis quasi aut quam quidem placeat illum facere quo quos provident vel veritatis similique!</small></p>
+            </div>
+            <div  style="width: 18rem;">
+                <p class="card-text"><small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet incidunt ea numquam laboriosam! Dolores iusto, rem facilis quasi aut quam quidem placeat illum facere quo quos provident vel veritatis similique!</small></p>
+            </div>
+            <div  style="width: 18rem;">
+                <p class="card-text"><small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet incidunt ea numquam laboriosam! Dolores iusto, rem facilis quasi aut quam quidem placeat illum facere quo quos provident vel veritatis similique!</small></p>
+            </div>
+        </div>
+        <br>
+        <p><small>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse debitis a, ad nulla molestiae laboriosam aspernatur veritatis quod possimus rerum placeat nisi? Sint atque cupiditate, id eveniet mollitia saepe recusandae? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat sunt porro nesciunt incidunt consequuntur dolores molestias ab illum, itaque aperiam eius voluptates eligendi quibusdam nemo vitae eveniet quia doloribus ullam?</small></p>
+    </footer>
+ {% endblock %}
+    
+{% extends "base.html.twig" %}
