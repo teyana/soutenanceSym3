@@ -15,7 +15,10 @@ class StoreController extends AbstractController
     {
         return $this->render('store/index.html.twig', [
             'controller_name' => 'StoreController',
-            'title' => 'Store'
+            'title' => 'Store',
+            'name' => 'Coton',
+            'price' => '15e',
+            'origin' => 'Egypte'
         ]);
     }
 }
