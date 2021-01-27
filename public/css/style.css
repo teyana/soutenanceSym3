@@ -1,4 +1,6 @@
-/* CSS du template de base. A ne pas toucher, c'est pour le header et footer */
+/*------------------------------------------------------------------------------
+    CSS du template de base. A ne pas toucher, c'est pour le header et footer
+--------------------------------------------------------------------------------*/
 
 * {
     box-sizing: border-box;
@@ -23,7 +25,9 @@ ul {
 }
 
 
-/* Parti logo */
+/*--------------------------------------------------------------
+    Parti logo
+--------------------------------------------------------------*/
 
 .espace_logo {
     display: flex;
@@ -45,7 +49,9 @@ ul {
 }
 
 
-/* menu */
+/*--------------------------------------------------------------
+    menu
+--------------------------------------------------------------*/
 
 .espace_liens {
     align-content: center;
@@ -57,7 +63,9 @@ ul {
 }
 
 
-/* Peronnalisation des liens:hover du menu */
+/*--------------------------------------------------------------
+    Peronnalisation des liens:hover du menu
+--------------------------------------------------------------*/
 
 .espace_liens a:hover {
     text-decoration: none !important;
@@ -101,6 +109,11 @@ ul {
 .menu_icones a i {
     padding-top: 0.15em;
 }
+
+
+/*--------------------------------------------------------------
+    Responsive
+--------------------------------------------------------------*/
 
 
 /* En dessous de 1000px */
