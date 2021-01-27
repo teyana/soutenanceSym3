@@ -2,12 +2,134 @@
 
 {% block title %}{% endblock %}
 
-{% block stylesheets %}{% endblock %}
+{% block stylesheets %}
+    <!-- Lien fichier CSS -->
+	<link rel="stylesheet" type="text/css" href="{{ asset('css//style_home/style_home.css') }}">
+{% endblock %}
 
 {% block body %}
 
-    <div class="container">
-        <h1>Hello ! ✅</h1>
-    </div>
+    <section class="section_fond_orange">
+			<figure class="photo_fond_orange">
+				<img class="img_orange" src="{{ asset('images/img1-orange.jpeg') }}" alt="Photo d'une femme noire avec un foulard bleu et un make-up on fleek" title="Photoshoot d'une femme noire">
+			</figure>
+	</section>
 
+    <section class="section_ventes">
+        <h1>Meilleurs ventes</h1>
+        <div>
+            <figure>
+                <figcaption class="fig_1">
+                    <p class="photo_titre">Lorem ipsum</p>
+                    <p class="photo_resume">Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum</p>
+                    <a class="photo_shop">Shop now</a>
+                </figcaption>
+                <img src="{{ asset('images/women.jpg') }}" alt="Photo colorée de femmes">
+            </figure>
+            <figure>
+                <img src="{{ asset('images/bathroom.jpg') }}" alt="Photo d'une salle de bain, au ton nude">
+                <figcaption class="fig_2">
+                    <p class="photo_titre">Lorem ipsum</p>
+                    <p class="photo_resume">Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum</p>
+                    <a class="photo_shop">Shop now</a>
+                </figcaption>
+            </figure>
+            <!-- <figure>
+						<img src="images/maroc.jpg" alt="Photo d'une femme marocaine">
+						<figcaption class="fig_2">
+							<p class="photo_titre">Lorem ipsum</p>
+							<p class="photo_resume">Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum</p>
+							<a class="photo_shop">Shop now</a>
+						</figcaption>
+					</figure> -->
+            <figure>
+                <figcaption class="fig_1">
+                    <p class="photo_titre">Lorem ipsum</p>
+                    <p class="photo_resume">Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum</p>
+                    <a class="photo_shop">Shop now</a>
+                </figcaption>
+                <img src="{{ asset('images/sandales.jpg') }}" alt="Photo de sandales fait main">
+            </figure>
+        </div>
+    </section>
+
+
+
+
+<section id="portfolio" class="portfolio section_ventes">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>Portfolio</h2>
+                    {# <p>Dans cette section, retrouvez quelques projets que j'ai réalisé. Les projets en HTML/CSS sont des projets que j'ai réalisé en autodidacte.</p> #}
+                </div>
+
+                <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-html">
+                        <div class="portfolio-wrap">
+                            <img src="{{ asset('images/women.jpg') }}" class="img-fluid" alt="">
+                            <div class="portfolio-links">
+                                <a href="https://www.aissata.fr/Webagency-projet2/" target="_blank" data-gall="portfolioGallery" title="Web 3"><i class="bx bx-plus"></i></a>
+                            </div>
+                            <p class="photo_titre">Lorem ipsum</p>
+                            <p class="photo_resume">Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum</p>
+                            <a class="photo_shop">Shop now</a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-html">
+                        <div class="portfolio-wrap">
+                            <img src="{{ asset('images/bathroom.jpg') }}" class="img-fluid" alt="">
+                            <div class="portfolio-links">
+                                <a href="https://aissata.fr/fond-video" target="_blank" data-gall="portfolioGallery" title="Web 3"><i class="bx bx-plus"></i></a>
+                            </div>
+                            <p>Background vidéo</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-html">
+                        <div class="portfolio-wrap">
+                            <img src="{{ asset('images/sandales.jpg') }}" class="img-fluid" alt="">
+                            <div class="portfolio-links">
+                                <a href="https://aissata.fr/Wild-Circus" target="_blank" data-gall="portfolioGallery" title="Web 3"><i class="bx bx-plus"></i></a>
+                            </div>
+                            <p>Projet Wild Circus</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-html">
+                        <div class="portfolio-wrap">
+                            <img src="{{ asset('images/sandales.jpg') }}" class="img-fluid" alt="">
+                            <div class="portfolio-links">
+                                <a href="https://aissata.fr/Web-studio" target="_blank" data-gall="portfolioGallery" title="Web 3"><i class="bx bx-plus"></i></a>
+                            </div>
+                            <p>Projet Capprio</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-html">
+                        <div class="portfolio-wrap">
+                            <img src="{{ asset('images/bathroom.jpg') }}" class="img-fluid" alt="">
+                            <div class="portfolio-links">
+                                <a href="https://aissata.fr/Front-freelancer" target="_blank" data-gall="portfolioGallery" title="Web 3"><i class="bx bx-plus"></i></a>
+                            </div>
+                            <p>Projet Freelance</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-wordpress">
+                        <div class="portfolio-wrap">
+                            <img <img src="{{ asset('images/women.jpg') }}" class="img-fluid" alt="">
+                            <div class="portfolio-links">
+                                <a href="https://aissata.fr/wordpress-projet4" target="_blank" data-gall="portfolioGallery" title="Web 3"><i class="bx bx-plus"></i></a>
+                            </div>
+                            <p>Projet Wordpress</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+        
 {% endblock %}

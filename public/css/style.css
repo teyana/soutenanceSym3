@@ -47,11 +47,6 @@ ul {
 
 /* menu */
 
-button .navbar-toggler,
-span .navbar-toggler-icon {
-    color: #000000 !important;
-}
-
 .espace_liens {
     align-content: center;
 }
