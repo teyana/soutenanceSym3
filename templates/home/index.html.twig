@@ -4,7 +4,7 @@
 
 {% block stylesheets %}
     <!-- Lien fichier CSS -->
-	<link rel="stylesheet" type="text/css" href="{{ asset('css//style_home/style_home.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ asset('css/style_home/style_home.css') }}">
 {% endblock %}
 
 {% block body %}
@@ -119,5 +119,9 @@
             </p>
         </div>
     </section>
+
+	{% block javascripts %}
+		<script src="{{ asset('js/main_home.js') }}"></script>
+    {% endblock %}
         
 {% endblock %}
