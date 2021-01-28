@@ -47,6 +47,12 @@ h1 {
 }
 
 
+/* .carousel-item img {
+    width: 00px;
+    height: 310px;
+} */
+
+
 /* Gérer le figcaption */
 
 figcaption {
@@ -74,14 +80,20 @@ figcaption .photo_titre {
     text-transform: uppercase;
 }
 
-figcaption a {
+.photo_shop {
     text-transform: uppercase;
     color: black;
     padding-bottom: 0.2em;
 }
 
-figcaption a:hover {
+
+/* figcaption a:hover {
     color: #000000;
+} */
+
+.photo_shop:hover {
+    color: #000000;
+    /* border-bottom: 1px solid black; */
 }
 
 

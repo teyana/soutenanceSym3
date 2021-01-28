@@ -39,6 +39,7 @@ ul {
     font-weight: bold;
     margin-bottom: 0px;
     padding: 0 1em;
+    border-bottom: 3px solid #ff4500;
 }
 
 .espace_logo img {
