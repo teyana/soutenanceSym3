@@ -59,10 +59,14 @@ figcaption {
 
 .fig_1 {
     margin-bottom: 1em;
+    padding-top: 1em;
+    border-top: 1px solid #000000;
 }
 
 .fig_2 {
     margin-top: 1em;
+    padding-bottom: 1em;
+    border-bottom: 1px solid #000000;
     /* background-color: lightgreen; */
 }
 
