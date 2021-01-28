@@ -24,16 +24,25 @@ class InstalledVersions
 private static $installed = array (
   'root' => 
   array (
-    'pretty_version' => 'v5.2.99',
-    'version' => '5.2.99.0',
+    'pretty_version' => 'dev-main',
+    'version' => 'dev-main',
     'aliases' => 
     array (
     ),
-    'reference' => NULL,
-    'name' => 'symfony/website-skeleton',
+    'reference' => '76ec4e6fee1daea7a368fae82b31474dca0a406e',
+    'name' => '__root__',
   ),
   'versions' => 
   array (
+    '__root__' => 
+    array (
+      'pretty_version' => 'dev-main',
+      'version' => 'dev-main',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '76ec4e6fee1daea7a368fae82b31474dca0a406e',
+    ),
     'composer/package-versions-deprecated' => 
     array (
       'pretty_version' => '1.11.99.1',
@@ -380,8 +389,8 @@ private static $installed = array (
     array (
       'provided' => 
       array (
-        0 => '1.0',
-        1 => '1.0.0',
+        0 => '1.0.0',
+        1 => '1.0',
       ),
     ),
     'psr/simple-cache-implementation' => 
@@ -1040,15 +1049,6 @@ private static $installed = array (
       array (
       ),
       'reference' => '6cd2f3d01faf1d77125ec14150a6fbd062dbe211',
-    ),
-    'symfony/website-skeleton' => 
-    array (
-      'pretty_version' => 'v5.2.99',
-      'version' => '5.2.99.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => NULL,
     ),
     'symfony/yaml' => 
     array (

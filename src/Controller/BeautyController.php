@@ -14,7 +14,18 @@ class BeautyController extends AbstractController
     public function index(): Response
     {
         return $this->render('beauty/index.html.twig', [
-            'controller_name' => 'BeautyController',
+            'title' => 'Beauty Product',
+            'name' => 'Beurre de Coco',
+            'price' => '5e',
+            'origin' => 'Abidjan'
+            
         ]);
     }
+    /**
+     * @Route("/beauty/15", name="beauty_detail")
+     */
+
+     public function show(){
+         return $this->render('beauty/detail.html.twig');
+     }
 }

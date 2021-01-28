@@ -14,7 +14,17 @@ class FoodController extends AbstractController
     public function index(): Response
     {
         return $this->render('food/index.html.twig', [
-            'controller_name' => 'FoodController',
+            'title' => 'Food product',
+            'name' => 'Noix de Muscade',
+            'price' => '4e',
+            'origin' => 'Mali'
         ]);
+    }
+     /**
+     * @Route("/food/15", name="food_detail")
+     */
+
+    public function show(){
+        return $this->render('food/detail.html.twig');
     }
 }

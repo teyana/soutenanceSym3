@@ -1,0 +1,251 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block stylesheets %}
+    <!-- Lien fichier CSS -->
+	<link rel="stylesheet" type="text/css" href="{{ asset('css/style_home/style_home.css') }}">
+{% endblock %}
+
+{% block body %}
+
+    <section class="section_fond_orange">
+        <figure class="photo_fond_orange">
+            <img class="img_orange" src="{{ asset('images/img1-orange.jpeg') }}" alt="Photo d'une femme noire avec un foulard bleu et un make-up on fleek" title="Photoshoot d'une femme noire">
+        </figure>
+	</section>
+
+    <section id="portfolio" class="section_vente">
+        <div class="section-titre">
+            <h1>Meilleurs ventes</h1>
+        </div>
+
+        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
+            {# <div class="col-lg-4 col-md-6 portfolio-item filter-html">
+                <figure class="portfolio-wrap">
+                    <figcaption class="fig_1">
+                        <p class="photo_titre">Lorem ipsum</p>
+                        <p class="photo_resume">Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum</p>
+                        <a class="photo_shop">Shop now</a>
+                    </figcaption>
+                    <img src="{{ asset('images/women.jpg') }}" class="img-fluid" alt="">
+                </figure>
+            </div> #}
+
+                {# Caroussel 1 #}
+            <figure class="col-lg-4 col-md-6 portfolio-item filter-wordpress">
+                <figcaption class="fig_1">
+                    <p class="photo_titre">Lorem ipsum</p>
+                    <p class="photo_resume">Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum</p>
+                    <a class="photo_shop">Shop now</a>
+                </figcaption>
+
+                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner portfolio-wrap">
+                        <div class="carousel-item active">
+                        <img <img src="{{ asset('images/women.jpg') }}" class="img-fluid" alt="">
+                        </div>
+                        <div class="carousel-item">
+                        <img <img src="{{ asset('images/bathroom.jpg') }}" class="img-fluid" alt="">
+                        </div>
+                        <div class="carousel-item">
+                        <img <img src="{{ asset('images/sandales.jpg') }}" class="img-fluid" alt="">
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </figure>
+
+            {# Caroussel 2 #}
+            <figure class="col-lg-4 col-md-6 portfolio-item filter-wordpress">
+                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner portfolio-wrap">
+                        <div class="carousel-item active">
+                        <img <img src="{{ asset('images/bathroom.jpg') }}" class="img-fluid" alt="">
+                        </div>
+                        <div class="carousel-item">
+                        <img <img src="{{ asset('images/sandales.jpg') }}" class="img-fluid" alt="">
+                        </div>
+                        <div class="carousel-item">
+                        <img <img src="{{ asset('images/women.jpg') }}" class="img-fluid" alt="">
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+                
+                <figcaption class="fig_2">
+                    <p class="photo_titre">Lorem ipsum</p>
+                    <p class="photo_resume">Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum</p>
+                    <a class="photo_shop">Shop now</a>
+                </figcaption>
+            </figure>
+
+            {# Caroussel 3 #}
+
+            <figure class="col-lg-4 col-md-6 portfolio-item filter-wordpress">
+                <figcaption class="fig_1">
+                    <p class="photo_titre">Lorem ipsum</p>
+                    <p class="photo_resume">Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum</p>
+                    <a class="photo_shop">Shop now</a>
+                </figcaption>
+
+                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner portfolio-wrap">
+                        <div class="carousel-item active">
+                        <img <img src="{{ asset('images/sandales.jpg') }}" class="img-fluid" alt="">
+                        </div>
+                        <div class="carousel-item">
+                        <img <img src="{{ asset('images/women.jpg') }}" class="img-fluid" alt="">
+                        </div>
+                        <div class="carousel-item">
+                        <img <img src="{{ asset('images/bathroom.jpg') }}" class="img-fluid" alt="">
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </figure>
+
+            {# Caroussel 4 #}
+
+            <figure class="col-lg-4 col-md-6 portfolio-item filter-wordpress">
+                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner portfolio-wrap">
+                        <div class="carousel-item active">
+                        <img <img src="{{ asset('images/sandales.jpg') }}" class="img-fluid" alt="">
+                        </div>
+                        <div class="carousel-item">
+                        <img <img src="{{ asset('images/women.jpg') }}" class="img-fluid" alt="">
+                        </div>
+                        <div class="carousel-item">
+                        <img <img src="{{ asset('images/bathroom.jpg') }}" class="img-fluid" alt="">
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+
+                <figcaption class="fig_2">
+                    <p class="photo_titre">Lorem ipsum</p>
+                    <p class="photo_resume">Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum</p>
+                    <a class="photo_shop">Shop now</a>
+                </figcaption>
+            </figure>
+
+            {# Caroussel 5 #}
+
+            <figure class="col-lg-4 col-md-6 portfolio-item filter-wordpress">
+                <figcaption class="fig_1">
+                    <p class="photo_titre">Lorem ipsum</p>
+                    <p class="photo_resume">Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum</p>
+                    <a class="photo_shop">Shop now</a>
+                </figcaption>
+
+                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner portfolio-wrap">
+                        <div class="carousel-item active">
+                        <img <img src="{{ asset('images/women.jpg') }}" class="img-fluid" alt="">
+                        </div>
+                        <div class="carousel-item">
+                        <img <img src="{{ asset('images/bathroom.jpg') }}" class="img-fluid" alt="">
+                        </div>
+                        <div class="carousel-item">
+                        <img <img src="{{ asset('images/sandales.jpg') }}" class="img-fluid" alt="">
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </figure>
+
+            {# Caroussel 6 #}
+
+            <figure class="col-lg-4 col-md-6 portfolio-item filter-wordpress">
+                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner portfolio-wrap">
+                        <div class="carousel-item active">
+                        <img <img src="{{ asset('images/bathroom.jpg') }}" class="img-fluid" alt="">
+                        </div>
+                        <div class="carousel-item">
+                        <img <img src="{{ asset('images/sandales.jpg') }}" class="img-fluid" alt="">
+                        </div>
+                        <div class="carousel-item">
+                        <img <img src="{{ asset('images/women.jpg') }}" class="img-fluid" alt="">
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+
+                <figcaption class="fig_2">
+                    <p class="photo_titre">Lorem ipsum</p>
+                    <p class="photo_resume">Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum</p>
+                    <a class="photo_shop">Shop now</a>
+                </figcaption>
+            </figure>
+        </div>
+    </section>
+
+    <section class="section_concept">
+        <h1>L'histoire / Le concept</h1>
+        <div>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris viverra erat nec dolor laoreet pharetra. Aliquam erat volutpat. Mauris porttitor, leo vitae malesuada maximus, neque diam placerat nunc, nec tincidunt nibh odio sed massa. Quisque malesuada
+                ipsum eget tellus accumsan pellentesque. Vivamus blandit blandit libero, sit amet pharetra nisl molestie sit amet. Donec aliquam urna in hendrerit imperdiet. Fusce hendrerit ipsum ut turpis viverra, a tincidunt dui scelerisque. Nulla id
+                posuere libero. Fusce dapibus consectetur mi, vel scelerisque ante mollis non. Nulla facilisi.
+            </p>
+            <p>
+                Aenean non mollis sapien, eu bibendum erat. Duis at faucibus mauris, vitae scelerisque ex. Nam augue ligula, venenatis eleifend laoreet at, commodo eu mauris. Cras pretium, odio at aliquet ullamcorper, metus magna dignissim purus, id placerat odio massa
+                at tellus. Nam condimentum finibus ante, eu efficitur lectus viverra at. Nulla tempor lorem orci, nec pretium nisi tristique et. Proin non sagittis ipsum.
+            </p>
+            <p>
+                Proin auctor nec libero at varius. Duis viverra massa eget consectetur efficitur. Praesent odio nulla, elementum non turpis vitae, fringilla consectetur ex. Cras ac fringilla dui, aliquet ultrices nunc. Etiam fermentum tempus efficitur. In mauris odio,
+                ullamcorper eget consequat molestie, feugiat eget orci. Donec interdum dolor vitae bibendum maximus. Vestibulum interdum eget quam sed molestie. Donec at molestie justo, ac auctor justo. Etiam condimentum turpis sed augue feugiat, vel
+                facilisis risus pretium.
+            </p>
+        </div>
+    </section>
+
+	{% block javascripts %}
+		<script src="{{ asset('js/main_home.js') }}"></script>
+    {% endblock %}
+        
+{% endblock %}
