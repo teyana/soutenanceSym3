@@ -2,9 +2,11 @@
 
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Entity\Product;
+use App\Entity\Category;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class BeautyController extends AbstractController
 {
@@ -13,11 +15,18 @@ class BeautyController extends AbstractController
      */
     public function index(): Response
     {
+        $repo =$this -> getDoctrine()->getRepository(Product::class);
+        
+        $products = $repo->findByCategory(5);
+            
+        
+
         return $this->render('beauty/index.html.twig', [
             'title' => 'Beauty Product',
             'name' => 'Beurre de Coco',
             'price' => '5e',
-            'origin' => 'Abidjan'
+            'origin' => 'Abidjan',
+            'products' => $products
             
         ]);
     }

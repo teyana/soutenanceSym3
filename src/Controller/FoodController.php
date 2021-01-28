@@ -1,10 +1,11 @@
 <?php
 
 namespace App\Controller;
-
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Entity\Category;
+use App\Entity\Product;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class FoodController extends AbstractController
 {
@@ -13,11 +14,16 @@ class FoodController extends AbstractController
      */
     public function index(): Response
     {
+        $repo =$this -> getDoctrine()->getRepository(Product::class);
+        
+        $products = $repo->findByCategory(3);
+
         return $this->render('food/index.html.twig', [
             'title' => 'Food product',
             'name' => 'Noix de Muscade',
             'price' => '4e',
-            'origin' => 'Mali'
+            'origin' => 'Mali',
+            'products' => $products
         ]);
     }
      /**

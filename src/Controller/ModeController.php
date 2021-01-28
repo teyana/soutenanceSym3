@@ -1,10 +1,11 @@
 <?php
 
 namespace App\Controller;
-
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Entity\Category;
+use App\Entity\Product;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class ModeController extends AbstractController
 {
@@ -13,11 +14,17 @@ class ModeController extends AbstractController
      */
     public function index(): Response
     {
+        $repo =$this -> getDoctrine()->getRepository(Product::class);
+        
+        $products = $repo->findByCategory(4);
+
         return $this->render('mode/index.html.twig', [
             'title' => 'Mode Product',
             'name' => 'Coton',
             'price' => '15e',
-            'origin' => 'Egypte'
+            'origin' => 'Egypte',
+            'products' => $products
+        
         ]);
     }
      /**
