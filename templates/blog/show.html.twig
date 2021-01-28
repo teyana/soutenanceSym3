@@ -1,27 +1,32 @@
 {% extends "base.html.twig" %}
 
 {% block body %}
-	<article>
-		<h2>{{ article.title }}</h2>
-		<br>
-		<small class="metadata">Publier le
-			{{ article.createdAt | date('d/m/Y')}}
-			a
-			{{ article.createdAt | date('H:i')}}
-			- Cathegorie: Conseils beauté</small>
-		<div class="content">
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis optio ullam similique sit voluptates ea mollitia nesciunt. Explicabo fugit sapiente ullam. Nesciunt ratione, nemo odio iste totam veritatis ea aliquid unde dicta exercitationem facere suscipit ipsa asperiores. Soluta quos, eveniet, temporibus cupiditate facere quo voluptatum ad exercitationem inventore facilis nulla tenetur modi, nisi et dolor!</p>
-			<img class="card-img-top" src="{{ article.image }}" alt="">
-			<hr>
-			<h3>Titre de paragraphe</h3>
-			<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid qui id corrupti itaque maiores placeat maxime exercitationem nisi eos nam, explicabo eligendi odit ab aperiam esse repellendus expedita quaerat. Nobis necessitatibus sed nostrum culpa eius modi asperiores odit. Dolore fuga quidem sit molestiae voluptates doloribus laudantium expedita iusto quos incidunt esse, quis numquam quia eaque labore! Reiciendis neque autem culpa accusantium alias error. Dignissimos veniam quo quibusdam? Dolorum veniam unde ipsum facere provident, officia amet.</p>
-			<h3>Titre de paragraphe</h3>
-			<p>Qui, maiores magnam itaque minima exercitationem dolore explicabo, voluptatem similique debitis a, obcaecati dicta aliquid. Labore temporibus, incidunt odit amet iure sit nesciunt quis officia laborum id provident quod veniam reprehenderit soluta, numquam pariatur natus inventore nam dolorem. Ratione libero illum commodi vel vitae veritatis facere reiciendis error praesentium, optio officiis aspernatur ducimus nisi qui, eligendi, ad quisquam sit quasi ab porro? Dolores dignissimos necessitatibus aliquam provident, quam saepe commodi porro repudiandae autem, obcaecati pariatur.</p>
-			<h3>Titre de paragraphe</h3>
-			<p>Praesentium ea magni rem corporis id accusantium veritatis ipsum vel vero suscipit deserunt ratione libero fugiat culpa, nesciunt quod exercitationem possimus ab? Explicabo aliquid perferendis pariatur dolorem. Maxime exercitationem quibusdam molestiae obcaecati asperiores accusantium sapiente, provident ad nostrum voluptate ullam, facere suscipit doloribus aspernatur sequi amet iste. Ut suscipit labore unde sapiente quisquam quo ab, excepturi dignissimos deserunt laudantium quod, nulla inventore ullam molestias maiores rem fugiat veritatis reiciendis harum. Inventore fugit sint sapiente assumenda.</p>
-			<h3>Titre de paragraphe</h3>
-			<p>Non recusandae porro autem quia accusantium maiores a vitae iure tenetur consectetur, officiis totam quae placeat doloribus dolore excepturi eum quibusdam sunt nisi nihil eaque aliquid debitis. Nemo, minus necessitatibus. Minima molestiae magni et, pariatur facilis necessitatibus tempora eveniet rerum non aspernatur inventore rem similique temporibus deserunt sint cum! Repellendus eius amet quia accusamus odio, temporibus libero possimus ipsam culpa dolore. Deleniti, necessitatibus. Voluptas officia ipsa cumque voluptate. Porro consequatur enim voluptas doloribus harum dicta?</p>
+	<div class="container">
+		<article class="col-11 justify-content-center">
+			<h2>{{ article.title }}</h2>
+			<br>
+			<small class="metadata">Publier le
+				{{ article.createdAt | date('d/m/Y')}}
+				a
+				{{ article.createdAt | date('H:i')}}
+				- Cathegorie: Conseils beauté</small>
+			<br>
+			<div class="content">
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis optio ullam similique sit voluptates ea mollitia nesciunt. Explicabo fugit sapiente ullam. Nesciunt ratione, nemo odio iste totam veritatis ea aliquid unde dicta exercitationem facere suscipit ipsa asperiores. Soluta quos, eveniet, temporibus cupiditate facere quo voluptatum ad exercitationem inventore facilis nulla tenetur modi, nisi et dolor!</p>
+				<img class="card-img-top col-11 align-self-center" src="{{ article.image }}" alt="">
+				<hr>
+				<h3>Titre de paragraphe</h3>
+				<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid qui id corrupti itaque maiores placeat maxime exercitationem nisi eos nam, explicabo eligendi odit ab aperiam esse repellendus expedita quaerat. Nobis necessitatibus sed nostrum culpa eius modi asperiores odit. Dolore fuga quidem sit molestiae voluptates doloribus laudantium expedita iusto quos incidunt esse, quis numquam quia eaque labore! Reiciendis neque autem culpa accusantium alias error. Dignissimos veniam quo quibusdam? Dolorum veniam unde ipsum facere provident, officia amet.</p>
+				<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid qui id corrupti itaque maiores placeat maxime exercitationem nisi eos nam, explicabo eligendi odit ab aperiam esse repellendus expedita quaerat. Nobis necessitatibus sed nostrum culpa eius modi asperiores odit. Dolore fuga quidem sit molestiae voluptates doloribus laudantium expedita iusto quos incidunt esse, quis numquam quia eaque labore! Reiciendis neque autem culpa accusantium alias error. Dignissimos veniam quo quibusdam? Dolorum veniam unde ipsum facere provident, officia amet.</p>
+				<h3>Titre de paragraphe</h3>
+				<p>Qui, maiores magnam itaque minima exercitationem dolore explicabo, voluptatem similique debitis a, obcaecati dicta aliquid. Labore temporibus, incidunt odit amet iure sit nesciunt quis officia laborum id provident quod veniam reprehenderit soluta, numquam pariatur natus inventore nam dolorem. Ratione libero illum commodi vel vitae veritatis facere reiciendis error praesentium, optio officiis aspernatur ducimus nisi qui, eligendi, ad quisquam sit quasi ab porro? Dolores dignissimos necessitatibus aliquam provident, quam saepe commodi porro repudiandae autem, obcaecati pariatur.</p>
+				<h3>Titre de paragraphe</h3>
+				<p>Praesentium ea magni rem corporis id accusantium veritatis ipsum vel vero suscipit deserunt ratione libero fugiat culpa, nesciunt quod exercitationem possimus ab? Explicabo aliquid perferendis pariatur dolorem. Maxime exercitationem quibusdam molestiae obcaecati asperiores accusantium sapiente, provident ad nostrum voluptate ullam, facere suscipit doloribus aspernatur sequi amet iste. Ut suscipit labore unde sapiente quisquam quo ab, excepturi dignissimos deserunt laudantium quod, nulla inventore ullam molestias maiores rem fugiat veritatis reiciendis harum. Inventore fugit sint sapiente assumenda.</p>
+				<p>Praesentium ea magni rem corporis id accusantium veritatis ipsum vel vero suscipit deserunt ratione libero fugiat culpa, nesciunt quod exercitationem possimus ab? Explicabo aliquid perferendis pariatur dolorem. Maxime exercitationem quibusdam molestiae obcaecati asperiores accusantium sapiente, provident ad nostrum voluptate ullam, facere suscipit doloribus aspernatur sequi amet iste. Ut suscipit labore unde sapiente quisquam quo ab, excepturi dignissimos deserunt laudantium quod, nulla inventore ullam molestias maiores rem fugiat veritatis reiciendis harum. Inventore fugit sint sapiente assumenda.</p>
+				<h3>Titre de paragraphe</h3>
+				<p>Non recusandae porro autem quia accusantium maiores a vitae iure tenetur consectetur, officiis totam quae placeat doloribus dolore excepturi eum quibusdam sunt nisi nihil eaque aliquid debitis. Nemo, minus necessitatibus. Minima molestiae magni et, pariatur facilis necessitatibus tempora eveniet rerum non aspernatur inventore rem similique temporibus deserunt sint cum! Repellendus eius amet quia accusamus odio, temporibus libero possimus ipsam culpa dolore. Deleniti, necessitatibus. Voluptas officia ipsa cumque voluptate. Porro consequatur enim voluptas doloribus harum dicta?</p>
+			</div>
+		</article>
+	</div>
 
-		</div>
-	</article>
 {% endblock %}
