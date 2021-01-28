@@ -13,62 +13,22 @@
 
 	<section class="cathegorie article">
 		<h1>Articles recents</h1>
-		<div>
-			<article>
-				<h2>Titre de l'article</h2>
-				<div class="metadata">Publier le 01/01/2020 - Cathegorie: Conseils beauté</div>
-				<div class="content">
-					<img src="https://via.placeholder.com/350x150" alt="">
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis optio ullam similique sit voluptates ea mollitia nesciunt. Explicabo fugit sapiente ullam. Nesciunt ratione, nemo odio iste totam veritatis ea aliquid unde dicta exercitationem facere suscipit ipsa asperiores. Soluta quos, eveniet, temporibus cupiditate facere quo voluptatum ad exercitationem inventore facilis nulla tenetur modi, nisi et dolor!</p>
-					<a href="{{ path('blog_show') }}" class="btn btn-primary">Lire la suite</a>
+		{% for article in articles %}
+			<article class="card mb-3 p-4 m-4">
+				<h2 class="card-title">{{ article.title }}</h2>
+				<small class="metadata">Publier le
+					{{ article.createdAt | date('d/m/Y')}}
+					a
+					{{ article.createdAt | date('H:i')}}
+					- Cathegorie: Conseils beauté</small>
+				<img class="card-img-top" src="https://via.placeholder.com/350x150" alt="">
+				<div class="content card-body">
+					{{ article.content | raw }}
+					<a href="{{ path('blog_show', {'id': article.id}) }}" class="btn btn-info btn-lg text-black">Lire la suite</a>
 				</div>
 			</article>
-			<article>
-				<h2>Titre de l'article</h2>
-				<div class="metadata">Publier le 01/01/2020 - Cathegorie: Conseils beauté</div>
-				<div class="content">
-					<img src="https://via.placeholder.com/350x150" alt="">
-					<p>Voluptatem aut ex, placeat reprehenderit optio, eius quos quia voluptas aliquid qui dicta, excepturi ab minus tenetur vero? Aperiam totam quas libero, placeat eius distinctio temporibus ut velit, necessitatibus repellat saepe non quasi, nemo molestias quidem laborum ratione fugiat delectus ducimus. Ducimus dolorum voluptatem a veritatis modi assumenda illum unde, aspernatur accusantium perspiciatis sint iure!</p>
-					<a href="" class="btn btn-primary">Lire la suite</a>
-				</div>
-			</article>
-			<article>
-				<h2>Titre de l'article</h2>
-				<div class="metadata">Publier le 01/01/2020 - Cathegorie: Conseils beauté</div>
-				<div class="content">
-					<img src="https://via.placeholder.com/350x150" alt="">
-					<p>Reiciendis tenetur voluptatibus quod labore aliquid veritatis consectetur nesciunt rem, totam distinctio ducimus vitae officia, perspiciatis nobis dolor animi in illum at? Doloribus explicabo ea libero voluptatibus adipisci provident, deserunt, alias architecto omnis ipsum veniam, minima consequatur consectetur sed ut assumenda error laborum impedit harum dolorem molestias quos voluptatum magnam aliquam? Hic quidem ex dicta!</p>
-					<a href="{{ path('blog_show') }}" class="btn btn-primary">Lire la suite</a>
-				</div>
-			</article>
-			<article>
-				<h2>Titre de l'article</h2>
-				<div class="metadata">Publier le 01/01/2020 - Cathegorie: Conseils beauté</div>
-				<div class="content">
-					<img src="https://via.placeholder.com/350x150" alt="">
-					<p>Amet deserunt, cum mollitia velit, sapiente ipsam maiores rerum impedit corporis quam error explicabo expedita pariatur? Est vero perferendis molestias ipsam voluptates. Atque provident nesciunt ratione incidunt consequuntur quibusdam, architecto reiciendis quas! Neque excepturi ipsam eum sit ullam placeat quidem totam ratione officiis autem, dolore itaque quae veritatis tempore nulla ex in minima rem fuga!</p>
-					<a href="{{ path('blog_show') }}" class="btn btn-primary">Lire la suite</a>
-				</div>
-			</article>
-			<article>
-				<h2>Titre de l'article</h2>
-				<div class="metadata">Publier le 01/01/2020 - Cathegorie: Conseils beauté</div>
-				<div class="content">
-					<img src="https://via.placeholder.com/350x150" alt="">
-					<p>Voluptatibus quos natus ut quod? Tempora qui error ipsam. Doloremque, animi consequatur adipisci ea ducimus libero laboriosam, quasi, alias reprehenderit est ipsam at quia dolorem porro. Sunt, ipsam illum aliquid quibusdam doloribus repellendus, a sapiente necessitatibus beatae corporis aspernatur omnis enim, velit dolor repudiandae eveniet delectus voluptatibus at. Iste, rerum officiis eum perferendis libero nisi!</p>
-					<a href="{{ path('blog_show') }}" class="btn btn-primary">Lire la suite</a>
-				</div>
-			</article>
-			<article>
-				<h2>Titre de l'article</h2>
-				<div class="metadata">Publier le 01/01/2020 - Cathegorie: Conseils beauté</div>
-				<div class="content">
-					<img src="https://via.placeholder.com/350x150" alt="">
-					<p>Praesentium nemo obcaecati cum eos voluptates repudiandae explicabo, soluta dignissimos nesciunt vitae tempore modi eligendi veritatis reprehenderit, laudantium nostrum asperiores, numquam iste magnam nobis rem qui at velit fuga. Deleniti, ad amet ipsa maiores dicta possimus cumque eum est, eligendi veritatis esse voluptate error expedita minima nihil voluptatibus consequuntur at, consectetur officiis accusamus. Excepturi, quis.</p>
-					<a href="{{ path('blog_show') }}" class="btn btn-primary">Lire la suite</a>
-				</div>
-			</article>
-		</div>
+		{% endfor %}
+
 	</section>
 
 {% endblock %}

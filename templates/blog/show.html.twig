@@ -2,12 +2,16 @@
 
 {% block body %}
 	<article>
-		<h2>Titre de l'article</h2>
-		<div class="metadata">Publier le 01/01/2020 - Cathegorie: Conseils beauté</div>
+		<h2>{{ article.title }}</h2>
 		<br>
+		<small class="metadata">Publier le
+			{{ article.createdAt | date('d/m/Y')}}
+			a
+			{{ article.createdAt | date('H:i')}}
+			- Cathegorie: Conseils beauté</small>
 		<div class="content">
 			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis optio ullam similique sit voluptates ea mollitia nesciunt. Explicabo fugit sapiente ullam. Nesciunt ratione, nemo odio iste totam veritatis ea aliquid unde dicta exercitationem facere suscipit ipsa asperiores. Soluta quos, eveniet, temporibus cupiditate facere quo voluptatum ad exercitationem inventore facilis nulla tenetur modi, nisi et dolor!</p>
-			<img src="https://via.placeholder.com/350x150" alt="">
+			<img class="card-img-top" src="{{ article.image }}" alt="">
 			<hr>
 			<h3>Titre de paragraphe</h3>
 			<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid qui id corrupti itaque maiores placeat maxime exercitationem nisi eos nam, explicabo eligendi odit ab aperiam esse repellendus expedita quaerat. Nobis necessitatibus sed nostrum culpa eius modi asperiores odit. Dolore fuga quidem sit molestiae voluptates doloribus laudantium expedita iusto quos incidunt esse, quis numquam quia eaque labore! Reiciendis neque autem culpa accusantium alias error. Dignissimos veniam quo quibusdam? Dolorum veniam unde ipsum facere provident, officia amet.</p>
