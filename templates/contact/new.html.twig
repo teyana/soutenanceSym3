@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Formulaire de contact{% endblock %}
+
+{% block body %}
+
+    <div class="container p-4">
+        <div class="alert alert-warning text-center" role="alert">
+            <h1><strong>Merci pour votre message !</strong></h1>
+            <p class="font-italic">Nos équipes se chargent de vous répondre dans les plus brefs délais !</p>
+            <a href={{ asset("/")}} class="btn btn-warning">Continuer mon shopping !</a>
+        </div>
+    </div>
+
+{% endblock %}

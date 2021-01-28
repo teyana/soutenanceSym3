@@ -39,6 +39,7 @@ ul {
     font-weight: bold;
     margin-bottom: 0px;
     padding: 0 1em;
+    border-bottom: 3px solid #ff4500;
 }
 
 .espace_logo img {
@@ -116,7 +117,7 @@ ul {
 --------------------------------------------------------------*/
 
 #footer {
-    border-top: 1px solid #000000;
+    border-top: 3px solid #ff4500;
 }
 
 #footer .social-links a {
@@ -147,7 +148,7 @@ ul {
     margin-top: 15px;
 }
 
-#footer .copyright span {
+#footer .copyright span a {
     color: #ff4500;
 }
 
