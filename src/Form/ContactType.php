@@ -7,6 +7,8 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
@@ -34,8 +36,8 @@ class ContactType extends AbstractType
         $builder
             ->add('firstName', TextType::class, $this->getConfiguration("Prénom", "Votre prénom"))
             ->add('lastName', TextType::class, $this->getConfiguration("Nom", "Votre nom"))
-            ->add('phone', IntegerType::class, $this->getConfiguration("Numéro de téléphone", "Votre numéro de téléphone"))
-            ->add('mail', TextType::class, $this->getConfiguration("Adresse mail", "Votre adresse mail"))
+            ->add('phone', NumberType::class, $this->getConfiguration("Numéro de téléphone", "Votre numéro de téléphone"))
+            ->add('mail', EmailType::class, $this->getConfiguration("Adresse mail", "Votre adresse mail"))
             ->add('message', TextareaType::class, $this->getConfiguration("Message", "Ecrivez-nous votre message ici"))
         ;
     }
