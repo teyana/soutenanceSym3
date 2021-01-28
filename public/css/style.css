@@ -1,4 +1,6 @@
-/* CSS du template de base. A ne pas toucher, c'est pour le header et footer */
+/*------------------------------------------------------------------------------
+    CSS du template de base. A ne pas toucher, c'est pour le header et footer
+--------------------------------------------------------------------------------*/
 
 * {
     box-sizing: border-box;
@@ -23,7 +25,9 @@ ul {
 }
 
 
-/* Parti logo */
+/*--------------------------------------------------------------
+    Parti logo
+--------------------------------------------------------------*/
 
 .espace_logo {
     display: flex;
@@ -45,12 +49,9 @@ ul {
 }
 
 
-/* menu */
-
-button .navbar-toggler,
-span .navbar-toggler-icon {
-    color: #000000 !important;
-}
+/*--------------------------------------------------------------
+    menu
+--------------------------------------------------------------*/
 
 .espace_liens {
     align-content: center;
@@ -62,7 +63,9 @@ span .navbar-toggler-icon {
 }
 
 
-/* Peronnalisation des liens:hover du menu */
+/*--------------------------------------------------------------
+    Peronnalisation des liens:hover du menu
+--------------------------------------------------------------*/
 
 .espace_liens a:hover {
     text-decoration: none !important;
@@ -106,6 +109,59 @@ span .navbar-toggler-icon {
 .menu_icones a i {
     padding-top: 0.15em;
 }
+
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+
+#footer {
+    border-top: 3px solid #ff4500;
+}
+
+#footer .social-links a {
+    font-size: 18px;
+    display: inline-block;
+    /* background: #ecd8cc; */
+    color: #000000;
+    line-height: 1;
+    padding: 8px 0;
+    margin-right: 4px;
+    /* border-radius: 50%; */
+    border: 1px solid #000000;
+    text-align: center;
+    width: 36px;
+    height: 36px;
+    transition: 0.3s;
+}
+
+#footer .social-links a:hover {
+    /* background: #ecd8cc; */
+    color: #000000;
+    border: 1px solid #ff4500;
+    text-decoration: none;
+}
+
+#footer .copyright {
+    text-align: center;
+    margin-top: 15px;
+}
+
+#footer .copyright span a {
+    color: #ff4500;
+}
+
+#footer .credits {
+    padding-top: 5px;
+    text-align: center;
+    font-size: 13px;
+    color: #eaebf0;
+}
+
+
+/*--------------------------------------------------------------
+    Responsive
+--------------------------------------------------------------*/
 
 
 /* En dessous de 1000px */
