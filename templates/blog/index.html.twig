@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	E-Concept Store - Blog
+{% endblock %}
+
+{% block body %}
+	<h1 class="display-3">Blog</h1>
+	<section class="section_fond_orange bg-info">
+		<figure class="photo_fond_orange">
+			<img class="img_orange img-fluid col-sm-10 col-lg-5 col-md-8" src="images/img1-orange.jpeg" alt="Photo d'une femme noire avec un foulard bleu et un make-up on fleek" title="Photoshoot d'une femme noire">
+		</figure>
+	</section>
+
+	<section class="container cathegorie article">
+		<h2 class="align-self-center h1">Articles recents</h2>
+		<div class="container">
+			<div class="row justify-content-around">
+				{% for article in articles %}
+					<article class="card col-lg-5 mb-2 p-2 m-1">
+						<h3 class="card-title">{{ article.title }}</h3>
+						<small class="metadata">Publier le
+							{{ article.createdAt | date('d/m/Y')}}
+							a
+							{{ article.createdAt | date('H:i')}}
+							- Cathegorie: Conseils beauté</small>
+						<img class="card-img-top" src="https://via.placeholder.com/350x150" alt="">
+						<div class="content card-body">
+							{{ article.content | raw }}
+							<a href="{{ path('blog_show', {'id': article.id}) }}" class="btn btn-info btn-lg text-black">Lire la suite</a>
+						</div>
+					</article>
+				{% endfor %}
+			</div>
+		</div>
+
+
+	</section>
+
+{% endblock %}

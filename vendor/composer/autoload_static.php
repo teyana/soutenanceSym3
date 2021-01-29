@@ -569,15 +569,18 @@ class ComposerStaticInit357095893e332f6f8b55dd3b8a0e315f
 
     public static $classMap = array (
         'App\\Controller\\BeautyController' => __DIR__ . '/../..' . '/src/Controller/BeautyController.php',
+        'App\\Controller\\BlogController' => __DIR__ . '/../..' . '/src/Controller/BlogController.php',
         'App\\Controller\\FoodController' => __DIR__ . '/../..' . '/src/Controller/FoodController.php',
         'App\\Controller\\HomeController' => __DIR__ . '/../..' . '/src/Controller/HomeController.php',
         'App\\Controller\\ModeController' => __DIR__ . '/../..' . '/src/Controller/ModeController.php',
         'App\\Controller\\ProductController' => __DIR__ . '/../..' . '/src/Controller/ProductController.php',
         'App\\Controller\\StoreController' => __DIR__ . '/../..' . '/src/Controller/StoreController.php',
+        'App\\Entity\\Article' => __DIR__ . '/../..' . '/src/Entity/Article.php',
         'App\\Entity\\Category' => __DIR__ . '/../..' . '/src/Entity/Category.php',
         'App\\Entity\\Product' => __DIR__ . '/../..' . '/src/Entity/Product.php',
         'App\\Form\\ProductType' => __DIR__ . '/../..' . '/src/Form/ProductType.php',
         'App\\Kernel' => __DIR__ . '/../..' . '/src/Kernel.php',
+        'App\\Repository\\ArticleRepository' => __DIR__ . '/../..' . '/src/Repository/ArticleRepository.php',
         'App\\Repository\\CategoryRepository' => __DIR__ . '/../..' . '/src/Repository/CategoryRepository.php',
         'App\\Repository\\ProductRepository' => __DIR__ . '/../..' . '/src/Repository/ProductRepository.php',
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',

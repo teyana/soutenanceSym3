@@ -7,15 +7,18 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'App\\Controller\\BeautyController' => $baseDir . '/src/Controller/BeautyController.php',
+    'App\\Controller\\BlogController' => $baseDir . '/src/Controller/BlogController.php',
     'App\\Controller\\FoodController' => $baseDir . '/src/Controller/FoodController.php',
     'App\\Controller\\HomeController' => $baseDir . '/src/Controller/HomeController.php',
     'App\\Controller\\ModeController' => $baseDir . '/src/Controller/ModeController.php',
     'App\\Controller\\ProductController' => $baseDir . '/src/Controller/ProductController.php',
     'App\\Controller\\StoreController' => $baseDir . '/src/Controller/StoreController.php',
+    'App\\Entity\\Article' => $baseDir . '/src/Entity/Article.php',
     'App\\Entity\\Category' => $baseDir . '/src/Entity/Category.php',
     'App\\Entity\\Product' => $baseDir . '/src/Entity/Product.php',
     'App\\Form\\ProductType' => $baseDir . '/src/Form/ProductType.php',
     'App\\Kernel' => $baseDir . '/src/Kernel.php',
+    'App\\Repository\\ArticleRepository' => $baseDir . '/src/Repository/ArticleRepository.php',
     'App\\Repository\\CategoryRepository' => $baseDir . '/src/Repository/CategoryRepository.php',
     'App\\Repository\\ProductRepository' => $baseDir . '/src/Repository/ProductRepository.php',
     'Attribute' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
