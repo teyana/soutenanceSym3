@@ -27,7 +27,7 @@ class FoodController extends AbstractController
         ]);
     }
      /**
-     * @Route("/food/15", name="food_detail")
+     * @Route("/food/{}", name="food_detail")
      */
 
     public function show(){

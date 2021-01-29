@@ -5,9 +5,9 @@
         <div class = "d-flex">
             <div class = "col text-center p-3" ><img src="https://placehold.it/600x500" width="75%" alt="..."></div>
             <div class = "col text-center p-5">
-                <h3 class="font-weight-bold">{{ title }}</h3>
-                <h4 class="font-weight-bold">{{ price }}€</h4>
-                <p>{{ description }}</p></div>
+                <h3 class="font-weight-bold">{{ product.name }}</h3>
+                <h4 class="font-weight-bold">{{ product.price }}€</h4>
+                <p>{{ product.description }}</p></div>
             <div></div>
         </div>
         <br>
@@ -28,7 +28,7 @@
             <div class = "col p-5 mt-5">
                 <dl class="row">
                     <dt class="col-sm-3">Pays d'origine :</dt>
-                    <dd class="col-sm-9">{{ origin }}</dd>
+                    <dd class="col-sm-9">{{ product.origin }}</dd>
 
                     <dt class="col-sm-3">Exploitation :</dt>
                     <dd class="col-sm-9">Lorem ipsum dolor sit.</dd>
