@@ -28,7 +28,7 @@ class ProductFixtures extends Fixture
 
         $categories = [$mode, $food,$beauty];
 
-        for ($i=1; $i <= 4; $i++){
+        for ($i=1; $i <= 9; $i++){
             $category= $categories[mt_rand(0, count($categories) -1)];
             $product = new Product();
             $product->setName("Carapate n° ".$i)

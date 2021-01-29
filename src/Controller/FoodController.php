@@ -16,7 +16,7 @@ class FoodController extends AbstractController
     {
         $repo =$this -> getDoctrine()->getRepository(Product::class);
         
-        $products = $repo->findByCategory(3);
+        $products = $repo->findByCategory(9);
 
         return $this->render('food/index.html.twig', [
             'title' => 'Food product',
