@@ -18,5 +18,5 @@ class HomeController extends AbstractController
             'title_histoire' => "L'histoire / Le concept"
         ]);
     }
-    
+
 }
