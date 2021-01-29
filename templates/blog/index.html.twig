@@ -4,8 +4,13 @@
 	E-Concept Store - Blog
 {% endblock %}
 
+{% block stylesheets %}
+    <!-- Lien fichier CSS -->
+	<link rel="stylesheet" type="text/css" href="{{ asset('css/style_blog/style_blog.css') }}">
+{% endblock %}
+
 {% block body %}
-	<h1 class="display-3">Blog</h1>
+	<h1 class="titre_page">Blog</h1>
 	<section class="section_fond_orange bg-info">
 		<figure class="photo_fond_orange">
 			<img class="img_orange img-fluid col-sm-10 col-lg-5 col-md-8" src="images/img1-orange.jpeg" alt="Photo d'une femme noire avec un foulard bleu et un make-up on fleek" title="Photoshoot d'une femme noire">
@@ -13,7 +18,7 @@
 	</section>
 
 	<section class="container cathegorie article">
-		<h2 class="align-self-center h1">Articles recents</h2>
+		<h1 class="titre_section">Articles recents</h1>
 		<div class="container">
 			<div class="row justify-content-around">
 				{% for article in articles %}
