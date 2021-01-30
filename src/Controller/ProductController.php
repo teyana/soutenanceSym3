@@ -31,7 +31,7 @@ class ProductController extends AbstractController
      */
     public function new(Request $request): Response
     {
-        $product = new Product();
+        $product = new Product();;
         $form = $this->createForm(ProductType::class, $product);
         $form->handleRequest($request);
 
