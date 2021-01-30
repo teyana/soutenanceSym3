@@ -3,9 +3,12 @@
 namespace App\Form;
 
 use App\Entity\Product;
+use App\Entity\Category;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 
 class ProductType extends AbstractType
 {
@@ -17,8 +20,14 @@ class ProductType extends AbstractType
             ->add('origin')
             ->add('description')
             ->add('quantity')
-            ->add('category')
-        ;
+            ->add('image')
+            ->add('created_at', DateTimeType::class, [
+                'date_label' => 'Starts On',
+            ])
+            ->add('category', EntityType::class, [
+                'class' => Category::class,
+                'choice_label' => 'label'
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver)
