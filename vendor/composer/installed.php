@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => 'becb0014a3422bf5b23afe226d13d8fef48267d7',
+    'reference' => 'da8436dd56cc8cd1d33d791520af5a8afe2741dc',
     'name' => '__root__',
   ),
   'versions' => 
@@ -18,7 +18,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => 'becb0014a3422bf5b23afe226d13d8fef48267d7',
+      'reference' => 'da8436dd56cc8cd1d33d791520af5a8afe2741dc',
     ),
     'composer/package-versions-deprecated' => 
     array (
@@ -190,6 +190,15 @@
       array (
       ),
       'reference' => '0dbf5d78455d4d6a41d186da50adc1122ec066f4',
+    ),
+    'fakerphp/faker' => 
+    array (
+      'pretty_version' => 'v1.13.0',
+      'version' => '1.13.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'ab3f5364d01f2c2c16113442fb987d26e4004913',
     ),
     'friendsofphp/proxy-manager-lts' => 
     array (

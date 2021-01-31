@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Connexion{% endblock %}
+
+{% block body %}
+    {# <h1 class="titre_page">Compte</h1> #}
+
+
+    <div class="container p-5">
+
+        <h2>Connexion</h2>
+
+        {{ form_start(formView) }}
+
+        {{ form_widget(formView) }}
+
+        <a href="{{ path('security_login') }}">
+            <button type="button" class="btn btn-dark">Connexion</button>
+        </a>
+        <a href="">
+            <button type="button" class="btn btn-warning">Créer un compte</button>
+        </a>
+
+        {{ form_end(formView) }}
+
+    </div>
+{% endblock %}

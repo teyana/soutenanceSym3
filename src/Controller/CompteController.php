@@ -15,7 +15,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class CompteController extends AbstractController
 {
     /**
-     * @Route("/compte", name="compte")
+     * @Route("/compte1", name="compte1")
      */
     public function index(FormFactoryInterface $factory): Response
     {
@@ -44,7 +44,7 @@ class CompteController extends AbstractController
     }
 
     /**
-     * @Route("/compte/create", name="compte_create")
+     * @Route("/compte1/create", name="compte1_create")
      */
     public function create(FormFactoryInterface $factory_1)
     {
