@@ -15,7 +15,7 @@
         <br>
         <div class= "container d-flex">
             <div class="col-3">
-                <button type="button" class="btn btn-warning">Ajouter au panier</button>   
+                <button href={{ path('panier_new', {'id': product.id}) }} type="button" class="btn btn-warning">Ajouter au panier</button>   
             </div> 
             <div class="col-3">
                 <input type="text" class="form-control" placeholder="Last name" aria-label="Last name">
