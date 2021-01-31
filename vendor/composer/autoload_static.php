@@ -584,6 +584,10 @@ class ComposerStaticInit357095893e332f6f8b55dd3b8a0e315f
         'App\\Entity\\Category' => __DIR__ . '/../..' . '/src/Entity/Category.php',
         'App\\Entity\\Contact' => __DIR__ . '/../..' . '/src/Entity/Contact.php',
         'App\\Entity\\Product' => __DIR__ . '/../..' . '/src/Entity/Product.php',
+<<<<<<< HEAD
+=======
+        'App\\Entity\\User' => __DIR__ . '/../..' . '/src/Entity/User.php',
+>>>>>>> 8faae83e74df55e8de6254dfc90a05168f774927
         'App\\Form\\ContactType' => __DIR__ . '/../..' . '/src/Form/ContactType.php',
         'App\\Form\\ProductType' => __DIR__ . '/../..' . '/src/Form/ProductType.php',
         'App\\Kernel' => __DIR__ . '/../..' . '/src/Kernel.php',
@@ -591,6 +595,7 @@ class ComposerStaticInit357095893e332f6f8b55dd3b8a0e315f
         'App\\Repository\\CategoryRepository' => __DIR__ . '/../..' . '/src/Repository/CategoryRepository.php',
         'App\\Repository\\ContactRepository' => __DIR__ . '/../..' . '/src/Repository/ContactRepository.php',
         'App\\Repository\\ProductRepository' => __DIR__ . '/../..' . '/src/Repository/ProductRepository.php',
+        'App\\Repository\\UserRepository' => __DIR__ . '/../..' . '/src/Repository/UserRepository.php',
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
         'Collator' => __DIR__ . '/..' . '/symfony/intl/Resources/stubs/Collator.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',

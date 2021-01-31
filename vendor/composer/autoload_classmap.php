@@ -22,6 +22,10 @@ return array(
     'App\\Entity\\Category' => $baseDir . '/src/Entity/Category.php',
     'App\\Entity\\Contact' => $baseDir . '/src/Entity/Contact.php',
     'App\\Entity\\Product' => $baseDir . '/src/Entity/Product.php',
+<<<<<<< HEAD
+=======
+    'App\\Entity\\User' => $baseDir . '/src/Entity/User.php',
+>>>>>>> 8faae83e74df55e8de6254dfc90a05168f774927
     'App\\Form\\ContactType' => $baseDir . '/src/Form/ContactType.php',
     'App\\Form\\ProductType' => $baseDir . '/src/Form/ProductType.php',
     'App\\Kernel' => $baseDir . '/src/Kernel.php',
@@ -29,6 +33,7 @@ return array(
     'App\\Repository\\CategoryRepository' => $baseDir . '/src/Repository/CategoryRepository.php',
     'App\\Repository\\ContactRepository' => $baseDir . '/src/Repository/ContactRepository.php',
     'App\\Repository\\ProductRepository' => $baseDir . '/src/Repository/ProductRepository.php',
+    'App\\Repository\\UserRepository' => $baseDir . '/src/Repository/UserRepository.php',
     'Attribute' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
     'Collator' => $vendorDir . '/symfony/intl/Resources/stubs/Collator.php',
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
