@@ -7,7 +7,7 @@
             <div class = "col text-center p-5">
                 <h3 class="font-weight-bold">{{ title}}</h3>
                 <h4 class="font-weight-bold">{{ product.price }} €</h4>
-                <p>{{ product.description }}</p></div>
+                <p>{{ product.description | raw}}</p></div>
             <div></div>
         </div>
         <br>
@@ -41,7 +41,7 @@
             <div class = "col text-center p-1" ><img src="images/plante.jpeg" width="75%" alt="..."></div>
         </div>
         <h5>Histoire du produit :</h5>
-        <p>{{product.description}}</p>
+        <p>{{product.description | raw}}</p>
         <br>
         <ul class="nav nav-tabs justify-content-between">
             <li class="nav-item">
