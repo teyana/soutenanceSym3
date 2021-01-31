@@ -8,6 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'App\\Controller\\BeautyController' => $baseDir . '/src/Controller/BeautyController.php',
     'App\\Controller\\BlogController' => $baseDir . '/src/Controller/BlogController.php',
+    'App\\Controller\\CartController' => $baseDir . '/src/Controller/CartController.php',
     'App\\Controller\\CompteController' => $baseDir . '/src/Controller/CompteController.php',
     'App\\Controller\\ContactController' => $baseDir . '/src/Controller/ContactController.php',
     'App\\Controller\\FoodController' => $baseDir . '/src/Controller/FoodController.php',
@@ -22,10 +23,7 @@ return array(
     'App\\Entity\\Category' => $baseDir . '/src/Entity/Category.php',
     'App\\Entity\\Contact' => $baseDir . '/src/Entity/Contact.php',
     'App\\Entity\\Product' => $baseDir . '/src/Entity/Product.php',
-<<<<<<< HEAD
-=======
     'App\\Entity\\User' => $baseDir . '/src/Entity/User.php',
->>>>>>> 8faae83e74df55e8de6254dfc90a05168f774927
     'App\\Form\\ContactType' => $baseDir . '/src/Form/ContactType.php',
     'App\\Form\\ProductType' => $baseDir . '/src/Form/ProductType.php',
     'App\\Kernel' => $baseDir . '/src/Kernel.php',

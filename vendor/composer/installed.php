@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '6cc2a4091dd4cb7143e4ebf39028ecbe530c7467',
+    'reference' => 'ee9fe4bc3225ae09f62e2d0beb15d54ad94dce1d',
     'name' => '__root__',
   ),
   'versions' => 
@@ -18,7 +18,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '6cc2a4091dd4cb7143e4ebf39028ecbe530c7467',
+      'reference' => 'ee9fe4bc3225ae09f62e2d0beb15d54ad94dce1d',
     ),
     'composer/package-versions-deprecated' => 
     array (
@@ -384,8 +384,8 @@
     array (
       'provided' => 
       array (
-        0 => '1.0.0',
-        1 => '1.0',
+        0 => '1.0',
+        1 => '1.0.0',
       ),
     ),
     'psr/simple-cache-implementation' => 
