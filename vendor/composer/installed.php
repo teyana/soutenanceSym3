@@ -600,12 +600,12 @@
     ),
     'symfony/form' => 
     array (
-      'pretty_version' => 'v5.2.1',
-      'version' => '5.2.1.0',
+      'pretty_version' => 'v5.2.2',
+      'version' => '5.2.2.0',
       'aliases' => 
       array (
       ),
-      'reference' => '27b1df421c73a2d219f9f5b203f0ec972f0b1de0',
+      'reference' => 'b9fc4092f5c138ec89604ee5faa9cb0c12e2b601',
     ),
     'symfony/framework-bundle' => 
     array (

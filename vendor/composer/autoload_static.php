@@ -584,7 +584,10 @@ class ComposerStaticInit357095893e332f6f8b55dd3b8a0e315f
         'App\\Entity\\Category' => __DIR__ . '/../..' . '/src/Entity/Category.php',
         'App\\Entity\\Contact' => __DIR__ . '/../..' . '/src/Entity/Contact.php',
         'App\\Entity\\Product' => __DIR__ . '/../..' . '/src/Entity/Product.php',
+<<<<<<< HEAD
+=======
         'App\\Entity\\User' => __DIR__ . '/../..' . '/src/Entity/User.php',
+>>>>>>> 8faae83e74df55e8de6254dfc90a05168f774927
         'App\\Form\\ContactType' => __DIR__ . '/../..' . '/src/Form/ContactType.php',
         'App\\Form\\ProductType' => __DIR__ . '/../..' . '/src/Form/ProductType.php',
         'App\\Kernel' => __DIR__ . '/../..' . '/src/Kernel.php',
