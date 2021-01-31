@@ -40,13 +40,17 @@
                                 <div class="col-9">
                                     <p class="name">{{product.name }}</p>
                                     <p class="origine">{{ product.origin }}</p>
-                                </div>
-                                <div class="col-3">
-                                    <p class="prix">{{ product.price }}</p>
-                                    <a href="{{ path('beauty_detail',{'id':product.id})}}">
-                                        <button type="button" class="btn btn-warning">VOIR +</button>
+                                    <a href="{{ path('mode_detail',{'id':product.id})}}">
+                                    <button type="button" class="btn btn-success">Ajouter au panier</button>
                                     </a>
                                 </div>
+                            <div class="col-5 mb-0"style="height: 4rem;" >
+                                <p class="prix">{{ product.price }}</p>
+                                <a href="{{ path('mode_detail',{'id':product.id})}}">
+                                    <button type="button" class="btn btn-warning">voir +</button>
+                                </a>
+                                
+                            </div>
                             
                             {# <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> #}
                             </div>
