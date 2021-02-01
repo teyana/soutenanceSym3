@@ -47,6 +47,11 @@ class Article
      */
     private $resume;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=BlogCategory::class, inversedBy="articles")
+     */
+    private $blogCategory;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -124,6 +129,18 @@ class Article
     public function setResume(string $resume): self
     {
         $this->resume = $resume;
+
+        return $this;
+    }
+
+    public function getBlogCategory(): ?BlogCategory
+    {
+        return $this->blogCategory;
+    }
+
+    public function setBlogCategory(?BlogCategory $blogCategory): self
+    {
+        $this->blogCategory = $blogCategory;
 
         return $this;
     }

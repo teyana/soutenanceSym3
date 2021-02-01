@@ -28,7 +28,8 @@
 							{{ article.createdAt | date('d/m/Y')}}
 							a
 							{{ article.createdAt | date('H:i')}}
-							- Cathegorie: Conseils beauté</small>
+							- Cathegorie:
+							{{ article.blogCategory }}</small>
 						<img class="card-img-top" src="https://via.placeholder.com/350x150" alt="">
 						<div class="content card-body">
 							{{ article.resume | raw }}
