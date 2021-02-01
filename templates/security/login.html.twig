@@ -10,6 +10,12 @@
 
         <h2>Connexion</h2>
 
+        {% if error %}
+            <div class="alert alert-danger">
+                {{ error.message }}
+            </div>
+        {% endif %}
+
         {{ form_start(formView) }}
 
         {{ form_widget(formView) }}

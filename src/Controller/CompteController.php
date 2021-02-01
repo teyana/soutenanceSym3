@@ -35,10 +35,10 @@ class CompteController extends AbstractController
 
             $formView = $form->createView();
 
-        return $this->render('compte/index.html.twig', [
+        return $this->render('compte1/index.html.twig', [
             'formView' => $formView
         ]);
-        // return $this->render('compte/index.html.twig', [
+        // return $this->render('compte1/index.html.twig', [
         //     'controller_name' => 'CompteController',
         // ]);
     }
