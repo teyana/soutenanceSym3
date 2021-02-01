@@ -46,6 +46,10 @@ class Article
     {
         return $this->id;
     }
+    public function getUppercaseName(): string
+    {
+        return strtoupper($this->title);
+    }
 
     public function getTitle(): ?string
     {
