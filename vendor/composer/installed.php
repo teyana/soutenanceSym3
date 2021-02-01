@@ -1,4 +1,4 @@
-<?php return array (
+git <?php return array (
   'root' => 
   array (
     'pretty_version' => 'dev-main',
