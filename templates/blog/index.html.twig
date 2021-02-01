@@ -28,8 +28,9 @@
 							{{ article.createdAt | date('d/m/Y')}}
 							a
 							{{ article.createdAt | date('H:i')}}
-							- Cathegorie: Conseils beauté</small>
-						<img class="card-img-top" src="https://picsum.photos/350/150" alt="">
+							- Cathegorie:
+							{{ article.blogCategory.name }}</small>
+						<img class="card-img-top" src="{{ article.image }}" alt="">
 						<div class="content card-body">
 							{{ article.resume | raw }}
 							<br>
