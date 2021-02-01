@@ -1,0 +1,39 @@
+/*--------------------------------------------------------------
+    Page blog
+--------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------
+    Partie main du site
+--------------------------------------------------------------*/
+
+
+/* La première section : photo */
+
+.section_fond_orange {
+    border: 1px solid black;
+    margin-bottom: 2em;
+    position: static;
+}
+
+.photo_fond_orange img {
+    max-width: 100%;
+    width: 50%;
+    position: relative;
+    top: 3em;
+    left: 2em;
+}
+
+
+/*--------------------------------------------------------------
+    Deuxième section : Articles récents
+--------------------------------------------------------------*/
+
+
+/* Titre de la section */
+
+.titre_section {
+    text-align: center;
+    padding-top: 0.5em;
+    font-size: 5em;
+}

@@ -29,7 +29,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '140f9066758ccbaa2c9b25d05fef48b5708503d2',
+    'reference' => 'da8436dd56cc8cd1d33d791520af5a8afe2741dc',
     'name' => '__root__',
   ),
   'versions' => 
@@ -41,7 +41,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '140f9066758ccbaa2c9b25d05fef48b5708503d2',
+      'reference' => 'da8436dd56cc8cd1d33d791520af5a8afe2741dc',
     ),
     'composer/package-versions-deprecated' => 
     array (
@@ -213,6 +213,15 @@ private static $installed = array (
       array (
       ),
       'reference' => '0dbf5d78455d4d6a41d186da50adc1122ec066f4',
+    ),
+    'fakerphp/faker' => 
+    array (
+      'pretty_version' => 'v1.13.0',
+      'version' => '1.13.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'ab3f5364d01f2c2c16113442fb987d26e4004913',
     ),
     'friendsofphp/proxy-manager-lts' => 
     array (
@@ -623,12 +632,12 @@ private static $installed = array (
     ),
     'symfony/form' => 
     array (
-      'pretty_version' => 'v5.2.1',
-      'version' => '5.2.1.0',
+      'pretty_version' => 'v5.2.2',
+      'version' => '5.2.2.0',
       'aliases' => 
       array (
       ),
-      'reference' => '27b1df421c73a2d219f9f5b203f0ec972f0b1de0',
+      'reference' => 'b9fc4092f5c138ec89604ee5faa9cb0c12e2b601',
     ),
     'symfony/framework-bundle' => 
     array (
@@ -894,12 +903,12 @@ private static $installed = array (
     ),
     'symfony/security-bundle' => 
     array (
-      'pretty_version' => 'v5.2.1',
-      'version' => '5.2.1.0',
+      'pretty_version' => 'v5.2.2',
+      'version' => '5.2.2.0',
       'aliases' => 
       array (
       ),
-      'reference' => '5a4e431445432c02b88c885c778765b50d92c6d5',
+      'reference' => '51854aa28585d196e60519271338aecad86f95f5',
     ),
     'symfony/security-core' => 
     array (

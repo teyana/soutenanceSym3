@@ -42,11 +42,22 @@
 
 				<div class="espace_liens">
 					<div class="menu_icones">
-						<a href="#" class="le_compte">
-							<p>Compte</p>
-							<i class="fas fa-user"></i>
-						</a>
-						<a class="le_panier">
+						{% if app.user %}
+							<a href="{{ path('security_logout') }}" class="le_compte">
+								<p>Déconnexion</p>
+								<i class="fas fa-user"></i>
+							</a>
+						{% else %}
+							<a href="{{ path('security_login') }}" class="le_compte">
+								<p>Inscription</p>
+								{# <i class="fas fa-user"></i> #}
+							</a>
+							<a href="{{ path('security_login') }}" class="le_compte">
+								<p>Connexion</p>
+								<i class="fas fa-user"></i>
+							</a>
+						{% endif %}
+						<a href="" class="le_panier">
 							<p>Panier</p>
 							<i class="fas fa-shopping-bag"></i>
 						</a>
@@ -81,8 +92,8 @@
 									<a class="nav-link active" href="{{ asset('/contact') }}">Contact</a>
 								</li>
 							</ul>
-							<form class="form-inline">
-								<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+							<form class="form-inline" role="search" id="nav-search-form" method="post" action="">
+								<input class="form-control mr-sm-2" type="search" placeholder="Recherche" aria-label="Search" name="search">
 								<button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Search</button>
 							</form>
 						</div>
