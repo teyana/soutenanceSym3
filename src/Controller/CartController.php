@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Product;
 use App\Entity\Category;
 use App\Service\Cart\CartService;
 use Symfony\Component\Routing\Annotation\Route;
@@ -23,19 +24,20 @@ class CartController extends AbstractController
     }
 
     /**
-     * @Route("/cart/add/{id}", name="panier_new")
+     * @Route("/cart/add/{id}", name="panier_new", methods={"GET"})
      * 
      *
      */
-    public function ad($id, CartService $cartService){
+    public function add($id, CartService $cartService){
         $cartService->add($id);
 
         return $this->redirectToRoute('panier');
-
+    // afficher variable de session -> avec tous les produit ajoutés 
+    // table temporaire dans la BDD pour le panier
     }
 
     /**
-     * @Route("/cart/remove{id}", name="panier_remove")
+     * @Route("/cart/remove{id}", name="panier_remove", methods={"GET"})
      *
      */
     public function remove($id, CartService $cartService){

@@ -25,6 +25,7 @@ class CartService{
         }
 
         $this->session->set('panier', $panier);
+        // trouver un objet pour stocker les produits - enregister un objet avec tous les produits
     }
 
     public function remove(int $id){
