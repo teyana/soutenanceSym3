@@ -3,17 +3,16 @@
 namespace App\Security;
 
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
-use Symfony\Component\Security\Core\Exception\AuthenticationException;
-use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\Security\Core\Security;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Security\Core\User\UserProviderInterface;
 use Symfony\Component\Security\Guard\AbstractGuardAuthenticator;
-
-
-// use Symfony\Component\Security\Core\userPasswordEncoderInterface
+use Symfony\Component\Security\Core\Exception\AuthenticationException;
+use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
+use Symfony\Component\Security\Core\Exception\UsernameNotFoundException;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
 
 class LoginFormAuthenticator extends AbstractGuardAuthenticator
 {
@@ -26,24 +25,39 @@ class LoginFormAuthenticator extends AbstractGuardAuthenticator
 
     public function supports(Request $request)
     {
-        return $request->attributes->get('route') === 'security_login'
+        return $request->attributes->get('_route') === 'security_login'
             && $request->isMethod('POST');
     }
 
     public function getCredentials(Request $request)
     {
-        return $request->request->get('login'); //Array avec 3 infos - on sort les infos de connexions
+        // dd($request);
+        return $request->request->get('login'); //Array avec 3 infos (Je veux être authentifier, je sors mes infos de la request)
     }
 
     public function getUser($credentials, UserProviderInterface $userProvider)
     {
-        return $userProvider-loadUserByUsername($credentials['email']); //Va chercher l'utilisateur qui correspond à cet email. Le provider cherche grace à (security.yaml), et on trouve l'email dans la bdd
+        try {
+
+            return $userProvider->loadUserByUsername($credentials['email']); //Va chercher l'utilisateur qui correspond à cet email. Le provider cherche grace à (security.yaml), et on trouve l'email dans la bdd
+        } catch (UsernameNotFoundException $e) {
+
+            throw new AuthenticationException("Cette adresse e-mail n'est pas connue");
+        }
     }
 
     public function checkCredentials($credentials, UserInterface $user) // Vérifier que le mot de passe fourni, correspond à celui de l'utilisateur trouvé
     {
-        // vérifier que $credentials['password'] correspond bien à $user->getPassword()
-        $this->encoder->isPasswordValid($user, $credentials['password']);
+        // vérifier que $credentials['password'](le mdp dans la bdd) correspond bien à $user->getPassword()(mot de passe que l'user a entré)
+
+        $isValid = $this->encoder->isPasswordValid($user, $credentials['password']);
+
+        if (!$isValid) {
+
+            throw new AuthenticationException("Les informations de connexion ne correspondent pas");
+        }
+
+        return true;
     }
 
     public function onAuthenticationFailure(Request $request, AuthenticationException $exception)

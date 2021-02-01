@@ -3,9 +3,9 @@
 namespace App\DataFixtures;
 
 use App\Entity\User;
+use Faker\Factory;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
-use Faker\Factory;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class AppFixtures extends Fixture
@@ -32,9 +32,9 @@ class AppFixtures extends Fixture
             ->setFullName("Admin")
             ->setRoles(['ROLE_ADMIN']);
 
-            $manager->persist($admin);
+        $manager->persist($admin);
 
-        for($u = 0; $u < 5; $u++) {
+        for ($u = 0; $u < 5; $u++) {
             $user = new User();
 
             $hash = $this->encoder->encodePassword($user, "password");

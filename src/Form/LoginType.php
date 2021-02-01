@@ -24,8 +24,7 @@ class LoginType extends AbstractType
                 'attr' => [
                     'placeholder' => 'Mot de passe...'
                 ]
-            ])
-        ;
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver)
