@@ -13,6 +13,8 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\MoneyType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
+use Symfony\Component\Form\Extension\Core\Type\NumberType;
+use Symfony\Component\Form\Extension\Core\Type\UrlType;
 
 class ProductType extends AbstractType
 {
@@ -25,21 +27,36 @@ class ProductType extends AbstractType
                     'placeholder' => 'Ecris un truc michel' , 
                     'class' => 'col-4' ]
             ])
-            ->add('price' , MoneyType::class )
-            ->add('origin')
-            ->add('image')
-            ->add('description', TextareaType::class)
-            ->add('quantity')
+            ->add('price', MoneyType::class, [
+                'label' => 'Prix',
+                "attr" => [
+                    "class" => "col-3"
+                ]
+            ])
+            ->add('origin', TextType::class , [
+                'label' => "Pays d'origine"
+            ])
+            ->add('image', UrlType::class, [
+                "label" => "Image d'un produit"
+            ])
+            ->add('description', TextareaType::class, [
+                "label" => "Description détaillé"
+            ])
+            ->add('quantity', NumberType::class , [
+               "label" => "Quantité en stock",
+               "attr" => [
+                   "class" => "col-3"
+               ]
+            ])
             ->add('category', EntityType::class, [
+                "label" => "Catégorie du produit",
                 'class' => Category::class,
                 'choice_label' => 'label',
+                "attr" => [
+                    "class" => "col-3"
+                ]
             ])
-
-            ->add('image')
-            ->add('category', EntityType::class, [
-                'class' => Category::class,
-                'choice_label' => 'label'
-            ]);
+            ;
     }
 
     public function configureOptions(OptionsResolver $resolver)
