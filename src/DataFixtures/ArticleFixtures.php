@@ -2,16 +2,25 @@
 
 namespace App\DataFixtures;
 
-use App\Entity\Article;
-use Doctrine\Bundle\FixturesBundle\Fixture;
-use Doctrine\Persistence\ObjectManager;
 use Faker\Factory;
+use App\Entity\Article;
+use Doctrine\Persistence\ObjectManager;
+use Doctrine\Bundle\FixturesBundle\Fixture;
+use Symfony\Component\String\Slugger\SluggerInterface;
 
 class ArticleFixtures extends Fixture
 {
+    protected $slugger;
+
+    public function __construct(SluggerInterface $slugger)
+    {
+        $this->slugger = $slugger;
+    }
+
     public function load(ObjectManager $manager)
     {
         $faker = Factory::create('fr_FR');
+
 
         for ($i = 1; $i <= 20; $i++) {
             $article = new Article();
@@ -20,7 +29,7 @@ class ArticleFixtures extends Fixture
                 ->setResume($faker->text(mt_rand(450, 900)))
                 ->setImage("http://placehold.it/350x150")
                 ->setCreatedAt(new \DateTime())
-                ->setSlug($faker->slug());
+                ->setSlug(strtolower($this->slugger->slug($article->getTitle())));
 
             $manager->persist($article);
         }
