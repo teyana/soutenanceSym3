@@ -24,12 +24,13 @@ class Product
 
     /**
      * @ORM\Column(type="string", length=255)
+     * 
      * @Assert\Length(
-     *      min = 2,
-     *      max = 5,
-     *      minMessage = "Trop court michel mini {{ limit }} ",
-     *      maxMessage = "Trop long ***** maxi {{ limit }} on a dit !"
-     * )
+     *      min = 3,
+     *      max = 20,
+     *      minMessage = "Votre nom devrait faire au moins {{ limit }} characters long",
+     *      maxMessage = "Votre nom devrait faire moins de {{ limit }} characters"
+     *)
      */
     private $name;
 

@@ -12,6 +12,7 @@ use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\MoneyType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 
 class ProductType extends AbstractType
 {
@@ -33,7 +34,12 @@ class ProductType extends AbstractType
                 'class' => Category::class,
                 'choice_label' => 'label',
             ])
-        ;
+
+            ->add('image')
+            ->add('category', EntityType::class, [
+                'class' => Category::class,
+                'choice_label' => 'label'
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver)
