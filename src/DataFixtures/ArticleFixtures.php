@@ -36,7 +36,7 @@ class ArticleFixtures extends Fixture
                 $article->setTitle($faker->sentence())
                     ->setContent($faker->text(mt_rand(3000, 9000)))
                     ->setResume($faker->text(mt_rand(450, 900)))
-                    ->setImage("http://placehold.it/350x150")
+                    ->setImage("https://picsum.photos/350/150")
                     ->setCreatedAt(new \DateTime())
                     ->setSlug(strtolower($this->slugger->slug($article->getTitle())))
                     ->setBlogCategory($blogCategory);
