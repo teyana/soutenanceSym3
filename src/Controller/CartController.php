@@ -2,9 +2,11 @@
 
 namespace App\Controller;
 
+use App\Entity\Category;
 use App\Service\Cart\CartService;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+
 
 class CartController extends AbstractController
 {
@@ -39,6 +41,6 @@ class CartController extends AbstractController
     public function remove($id, CartService $cartService){
         $cartService->remove($id);
 
-        return $this->redirectToRoute("panier");
+        return $this->redirectToRoute('panier');
     }
 }

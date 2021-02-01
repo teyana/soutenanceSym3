@@ -20,7 +20,7 @@
             </thead>
             <tbody>
                 {% for item in items %}
-                    <td>{{ item.product.title }}</td>
+                    <td>{{ item.product.name }}</td>
                     <td>{{ item.product.price }}</td>
                     <td>{{ item.quantity }}</td>
                     <td>{{ item.product.price * item.quantity }}</td>
@@ -36,7 +36,7 @@
                     <td colspan="3" class="text-right">Total :</td>
                     <td>{{ total }}</td>
                     <td>
-                        <a href="{{ path('panier_remove', {'id': item.product.id}) }}"></a>
+                        <a href="{{ path('panier_remove', {'id': product.id}) }}"></a>
                     </td>
                 </tr>
             </tfoot>
