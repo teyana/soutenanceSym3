@@ -42,6 +42,11 @@ class Article
      */
     private $slug;
 
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $resume;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -107,6 +112,18 @@ class Article
     public function setSlug(string $slug): self
     {
         $this->slug = $slug;
+
+        return $this;
+    }
+
+    public function getResume(): ?string
+    {
+        return $this->resume;
+    }
+
+    public function setResume(string $resume): self
+    {
+        $this->resume = $resume;
 
         return $this;
     }

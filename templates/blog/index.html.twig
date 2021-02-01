@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block stylesheets %}
-    <!-- Lien fichier CSS -->
+	<!-- Lien fichier CSS -->
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/style_blog/style_blog.css') }}">
 {% endblock %}
 
@@ -31,7 +31,8 @@
 							- Cathegorie: Conseils beauté</small>
 						<img class="card-img-top" src="https://via.placeholder.com/350x150" alt="">
 						<div class="content card-body">
-							{{ article.content | raw }}
+							{{ article.resume | raw }}
+							<br>
 							<a href="{{ path('blog_show', {'id': article.id}) }}" class="btn btn-info btn-lg text-black">Lire la suite</a>
 						</div>
 					</article>
