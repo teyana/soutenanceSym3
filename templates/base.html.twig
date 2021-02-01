@@ -42,11 +42,22 @@
 
 				<div class="espace_liens">
 					<div class="menu_icones">
-						<a href="{{ path('compte') }}" class="le_compte">
-							<p>Compte</p>
-							<i class="fas fa-user"></i>
-						</a>
-						<a href={{ path('panier')}} class="le_panier">
+						{% if app.user %}
+							<a href="{{ path('security_logout') }}" class="le_compte">
+								<p>Déconnexion</p>
+								<i class="fas fa-user"></i>
+							</a>
+						{% else %}
+							<a href="{{ path('security_login') }}" class="le_compte">
+								<p>Inscription</p>
+								{# <i class="fas fa-user"></i> #}
+							</a>
+							<a href="{{ path('security_login') }}" class="le_compte">
+								<p>Connexion</p>
+								<i class="fas fa-user"></i>
+							</a>
+						{% endif %}
+						<a href="" class="le_panier">
 							<p>Panier</p>
 							<i class="fas fa-shopping-bag"></i>
 						</a>

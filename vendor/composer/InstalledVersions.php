@@ -30,7 +30,11 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
+<<<<<<< HEAD
     'reference' => 'ee9fe4bc3225ae09f62e2d0beb15d54ad94dce1d',
+=======
+    'reference' => 'da8436dd56cc8cd1d33d791520af5a8afe2741dc',
+>>>>>>> main
     'name' => '__root__',
   ),
   'versions' => 
@@ -42,7 +46,11 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
+<<<<<<< HEAD
       'reference' => 'ee9fe4bc3225ae09f62e2d0beb15d54ad94dce1d',
+=======
+      'reference' => 'da8436dd56cc8cd1d33d791520af5a8afe2741dc',
+>>>>>>> main
     ),
     'composer/package-versions-deprecated' => 
     array (
@@ -214,6 +222,15 @@ private static $installed = array (
       array (
       ),
       'reference' => '0dbf5d78455d4d6a41d186da50adc1122ec066f4',
+    ),
+    'fakerphp/faker' => 
+    array (
+      'pretty_version' => 'v1.13.0',
+      'version' => '1.13.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'ab3f5364d01f2c2c16113442fb987d26e4004913',
     ),
     'friendsofphp/proxy-manager-lts' => 
     array (

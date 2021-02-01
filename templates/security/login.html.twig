@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Connexion
+{% endblock %}
+
+{% block body %}
+	{# <h1 class="titre_page">Compte</h1> #}
+
+
+	<div class="container p-5">
+
+		<h2>Connexion</h2>
+
+		{% if error %}
+			<div class="alert alert-danger">
+				{{ error.message }}
+			</div>
+		{% endif %}
+
+		{{ form_start(formView) }}
+
+		{{ form_widget(formView) }}
+
+
+		<button type="submit" class="btn btn-dark">Connexion</button>
+
+		{{ form_end(formView) }}
+
+	</div>
+{% endblock %}
