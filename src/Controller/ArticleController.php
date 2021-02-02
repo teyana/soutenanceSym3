@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Article;
 use App\Entity\BlogCategory;
 use App\Repository\ArticleRepository;
 use App\Repository\BlogCategoryRepository;
@@ -10,12 +11,16 @@ use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\FormType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\UrlType;
 use Symfony\Component\Form\FormFactoryInterface;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\String\Slugger\SluggerInterface;
 
 class ArticleController extends AbstractController
 {
@@ -59,9 +64,11 @@ class ArticleController extends AbstractController
     /**
      * @Route("/admin/article/create", name="article_create")
      */
-    public function create(FormFactoryInterface $factory)
+    public function create(FormFactoryInterface $factory, Request $request, SluggerInterface $slugger)
     {
-        $builder = $factory->createBuilder();
+        $builder = $factory->createBuilder(FormType::class, null, [
+            'data_class' => Article::class
+        ]);
 
         $builder->add('title', TextType::class, [
             'label' => 'Titre de l\'article',
@@ -81,13 +88,13 @@ class ArticleController extends AbstractController
                     'placeholder' => 'Ecrivez le contenu complet de l\'article en incluant les balises html.'
                 ]
             ])
-            ->add('image', TextType::class, [
+            ->add('image', UrlType::class, [
                 'label' => 'Image principale de l\'article',
                 'attr' => [
                     'placeholder' => 'URL de l\'image'
                 ]
             ])
-            ->add('date')
+            // ->add('date')
             ->add('blogCategory', EntityType::class, [
                 'label' => 'Catégorie de l\'article',
                 'placeholder' => '-- Choisir une catégorie --',
@@ -96,6 +103,14 @@ class ArticleController extends AbstractController
             ]);
 
         $form = $builder->getForm();
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted($request)) {
+            $article = $form->getData();
+            $article->setSlug(strtolower($slugger->slug($article->getTitle())));
+            dd($article);
+        }
 
         $formView = $form->createView();
 
