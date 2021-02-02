@@ -1,4 +1,4 @@
-git <?php return array (
+<?php return array (
   'root' => 
   array (
     'pretty_version' => 'dev-main',
@@ -6,7 +6,7 @@ git <?php return array (
     'aliases' => 
     array (
     ),
-    'reference' => '6ed0d6325f37f44f39ac24a8200786b1823a9dbe',
+    'reference' => '51feb327065955dfe2d0c739830d4b2c5931e335',
     'name' => '__root__',
   ),
   'versions' => 
@@ -18,7 +18,7 @@ git <?php return array (
       'aliases' => 
       array (
       ),
-      'reference' => '6ed0d6325f37f44f39ac24a8200786b1823a9dbe',
+      'reference' => '51feb327065955dfe2d0c739830d4b2c5931e335',
     ),
     'composer/package-versions-deprecated' => 
     array (
@@ -393,8 +393,8 @@ git <?php return array (
     array (
       'provided' => 
       array (
-        0 => '1.0',
-        1 => '1.0.0',
+        0 => '1.0.0',
+        1 => '1.0',
       ),
     ),
     'psr/simple-cache-implementation' => 
