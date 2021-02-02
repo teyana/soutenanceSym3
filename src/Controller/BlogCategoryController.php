@@ -44,12 +44,26 @@ class BlogCategoryController extends AbstractController
     /**
      * @Route("/admin/blogCategory/{id}/edit",name="blogCategory_edit")
      */
-    public function edit($id, BlogCategoryRepository $blogCategoryRepository)
+    public function edit($id, BlogCategoryRepository $blogCategoryRepository, Request $request, EntityManagerInterface $em)
     {
         $blogCategory = $blogCategoryRepository->find($id);
 
+        $form = $this->createForm(BlogCategoryType::class, $blogCategory);
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em->persist($blogCategory);
+            $em->flush();
+
+            return $this->redirectToRoute('blog');
+        }
+
+        $formView = $form->createView();
+
         return $this->render('blog_category/edit.html.twig', [
-            'blogCategory' => $blogCategory
+            'blogCategory' => $blogCategory,
+            'formView' => $formView
         ]);
     }
 }
