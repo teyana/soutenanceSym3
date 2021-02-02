@@ -5,6 +5,10 @@ namespace App\Controller;
 use App\Repository\ArticleRepository;
 use App\Repository\BlogCategoryRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormFactoryInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
@@ -56,12 +60,47 @@ class ArticleController extends AbstractController
     {
         $builder = $factory->createBuilder();
 
-        $builder->add('title')
-            ->add('resume')
-            ->add('content')
-            ->add('image')
+        $builder->add('title', TextType::class, [
+            'label' => 'Titre de l\'article',
+            'attr' => [
+                'class' => 'form-control',
+                'placeholder' => 'Quel est le titre de votre  de l\'article?'
+            ]
+        ])
+            ->add('resume', TextareaType::class, [
+                'label' => 'Description courte  de l\'article',
+                'attr' => [
+                    'class' => 'form-control',
+                    'placeholder' => 'De quoi parle l\'article en bref?'
+                ]
+            ])
+            ->add('content', TextareaType::class, [
+                'label' => 'Contenu complet de l\'article',
+                'attr' => [
+                    'class' => 'form-control',
+                    'placeholder' => 'Ecrivez le contenu complet de l\'article en incluant les balises html.'
+                ]
+            ])
+            ->add('image', TextType::class, [
+                'label' => 'Image principale de l\'article',
+                'attr' => [
+                    'class' => 'form-control',
+                    'placeholder' => 'URL de l\'image'
+                ]
+            ])
             ->add('date')
-            ->add('blogCategory');
+            ->add('blogCategory', ChoiceType::class, [
+                'label' => 'Catégorie de l\'article',
+                'attr' => [
+                    'class' => 'form-control'
+                ],
+                'placeholder' => '-- Choisir une catégorie --',
+                'choices' => [
+                    'Catégorie 1' => 1,
+                    'Catégorie 2' => 2,
+                    'Catégorie 3' => 3
+                ]
+            ]);
 
         $form = $builder->getForm();
 
