@@ -7,6 +7,7 @@ use App\Entity\BlogCategory;
 use App\Repository\ArticleRepository;
 use App\Repository\BlogCategoryRepository;
 use App\Repository\CategoryRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
@@ -64,7 +65,7 @@ class ArticleController extends AbstractController
     /**
      * @Route("/admin/article/create", name="article_create")
      */
-    public function create(FormFactoryInterface $factory, Request $request, SluggerInterface $slugger)
+    public function create(FormFactoryInterface $factory, Request $request, SluggerInterface $slugger, EntityManagerInterface $em)
     {
         $builder = $factory->createBuilder(FormType::class, null, [
             'data_class' => Article::class
@@ -94,7 +95,6 @@ class ArticleController extends AbstractController
                     'placeholder' => 'URL de l\'image'
                 ]
             ])
-            // ->add('date')
             ->add('blogCategory', EntityType::class, [
                 'label' => 'Catégorie de l\'article',
                 'placeholder' => '-- Choisir une catégorie --',
@@ -109,6 +109,10 @@ class ArticleController extends AbstractController
         if ($form->isSubmitted($request)) {
             $article = $form->getData();
             $article->setSlug(strtolower($slugger->slug($article->getTitle())));
+
+            $em->persist($article);
+            $em->flush();
+
             dd($article);
         }
 
