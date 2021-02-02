@@ -10,6 +10,14 @@
 		<h1>
 			Modifier la catégorie d'article de blog :</h1>
 		<h2>{{ blogCategory.name }}</h2>
-	</div>
+		{{ form_start(formView )}}
 
+		{{ form_widget(formView )}}
+
+		<button type="submit" class="btn btn-info">
+			Ajouter la catégorie
+		</button>
+		{{ form_end(formView )}}
+	</div>
+	<br><br>
 {% endblock %}
