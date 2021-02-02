@@ -16,9 +16,15 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
-
 class SecurityController extends AbstractController
 {
+    protected $encoder;
+
+    public function __construct(UserPasswordEncoderInterface $encoder)
+    {
+        $this->encoder = $encoder;
+    }
+
     /**
      * @Route("/login", name="security_login")
      */
@@ -37,11 +43,6 @@ class SecurityController extends AbstractController
      */
     public function logout()
     {
-    }
-
-    public function __construct(UserPasswordEncoderInterface $encoder)
-    {
-        $this->encoder = $encoder;
     }
 
     /**
@@ -66,19 +67,21 @@ class SecurityController extends AbstractController
                 'attr' => ['placeholder' => "Entrez un mot de passe de connexion"]
             ]);
 
-        $user = new User;
 
         $form = $builder->getForm();
 
         $form->handleRequest($request);
 
-        $data = $form->getData();
+        if ($form->isSubmitted() && $form->isValid()) {
+            $data = $form->getData();
 
-        if ($form->isSubmitted()) {
-
-            $user = $form->getData();
+            $user = new User;
 
             $hash = $this->encoder->encodePassword($user, "password");
+
+            $user->setEmail($data->getEmail());
+            $user->setFullName($data->getFullName());
+            $user->setPassword($hash);
 
             $em->persist($user);
             $em->flush();

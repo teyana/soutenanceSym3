@@ -17,7 +17,7 @@ class ModeController extends AbstractController
     {
         $repo = $this->getDoctrine()->getRepository(Product::class);
 
-        $products = $repo->findByCategory(18);
+        $products = $repo->findByCategory(20);
 
         return $this->render('mode/index.html.twig', [
             'title' => 'Mode Product',

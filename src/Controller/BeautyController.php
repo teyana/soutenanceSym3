@@ -17,7 +17,7 @@ class BeautyController extends AbstractController
     {
         $repo = $this->getDoctrine()->getRepository(Product::class);
 
-        $products = $repo->findByCategory(17);
+        $products = $repo->findByCategory(21);
 
 
 
