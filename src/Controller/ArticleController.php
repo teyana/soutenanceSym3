@@ -12,6 +12,8 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\String\Slugger\SluggerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 
 class ArticleController extends AbstractController
 {
@@ -69,7 +71,10 @@ class ArticleController extends AbstractController
             $em->persist($article);
             $em->flush();
 
-            dd($article);
+            return $this->redirectToRoute('article_show', [
+                'blogCategory_slug' => $article->getBlogCategory()->getSlug(),
+                'slug' => $article->getSlug()
+            ]);
         }
 
         $formView = $form->createView();
@@ -93,7 +98,10 @@ class ArticleController extends AbstractController
         if ($form->isSubmitted($request)) {
             $em->flush();
 
-            dd($article);
+            return $this->redirectToRoute('article_show', [
+                'blogCategory_slug' => $article->getBlogCategory()->getSlug(),
+                'slug' => $article->getSlug()
+            ]);
         }
 
         $formView = $form->createView();
