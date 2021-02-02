@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Article;
 use App\Form\ArticleType;
 use App\Repository\ArticleRepository;
 use Doctrine\ORM\EntityManagerInterface;
@@ -56,12 +57,13 @@ class ArticleController extends AbstractController
      */
     public function create(Request $request, SluggerInterface $slugger, EntityManagerInterface $em)
     {
-        $form = $this->createForm(ArticleType::class);
+        $article = new Article;
+
+        $form = $this->createForm(ArticleType::class, $article);
 
         $form->handleRequest($request);
 
         if ($form->isSubmitted($request)) {
-            $article = $form->getData();
             $article->setSlug(strtolower($slugger->slug($article->getTitle())));
 
             $em->persist($article);
@@ -73,6 +75,31 @@ class ArticleController extends AbstractController
         $formView = $form->createView();
 
         return $this->render('article/create.html.twig', [
+            'formView' => $formView
+        ]);
+    }
+
+    /**
+     * @Route("/admin/article/{id}/edit", name="article_edit")
+     */
+    public function edit($id, ArticleRepository $articleRepository, Request $request, EntityManagerInterface $em)
+    {
+        $article = $articleRepository->find($id);
+
+        $form = $this->createForm(ArticleType::class, $article);
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted($request)) {
+            $em->flush();
+
+            dd($article);
+        }
+
+        $formView = $form->createView();
+
+        return $this->render('article/edit.html.twig', [
+            'article' => $article,
             'formView' => $formView
         ]);
     }
