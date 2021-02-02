@@ -23,10 +23,14 @@ class BlogController extends AbstractController
     }
 
     /**
-     * @Route("/blog/{id}", name="blog_show")
+     * @Route("/blog/{blogCategory_slug}/{slug}", name="blog_show")
      */
-    public function show(Article $article)
+    public function show($slug, ArticleRepository $articleRepository)
     {
+        $article = $articleRepository->findOneBy([
+            'slug' => $slug
+        ]);
+
         return $this->render('blog/show.html.twig', [
             'article' => $article
         ]);
