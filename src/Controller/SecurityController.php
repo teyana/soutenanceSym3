@@ -81,9 +81,9 @@ class SecurityController extends AbstractController
 
             $hash = $this->encoder->encodePassword($user, "password");
 
-            $user->setEmail($data['email'])
-                ->setFullName($data['fullName'])
-                ->setPassword($hash);
+            // $user->setEmail($data['email'])
+            //     ->setFullName($data['fullName'])
+            //     ->setPassword($hash);
 
             // $hash = $this->encoder->encodePassword($user, "password");
 
