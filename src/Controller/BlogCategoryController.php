@@ -31,7 +31,7 @@ class BlogCategoryController extends AbstractController
             $em->persist($blogCategory);
             $em->flush();
 
-            return $this->redirectToRoute('blog', []);
+            return $this->redirectToRoute('blog');
         }
 
         $formView = $form->createView();
