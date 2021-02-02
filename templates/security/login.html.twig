@@ -17,6 +17,16 @@
 			</div>
 		{% endif %}
 
+		{% for label,messages in app.flashes %}
+			<div class="container text-center my-5">
+				<div class="alert-success {{ label }}">
+					{% for message in messages %}
+						<p>{{message | raw }}</p>
+					{% endfor %}
+				</div>
+			</div>
+		{% endfor %}
+
 		{{ form_start(formView) }}
 
 		{{ form_widget(formView) }}
