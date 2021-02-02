@@ -2,16 +2,12 @@
 
 namespace App\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
 use App\Repository\ProductRepository;
-use Doctrine\ORM\Mapping\HasLifecycleCallbacks;
+use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
-use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * @ORM\Entity(repositoryClass=ProductRepository::class)
- * @ORM\HasLifecycleCallbacks()
- * @UniqueEntity("name", message="Désolé ce produit existe déjà")
  */
 class Product
 {
@@ -169,14 +165,5 @@ class Product
         $this->createdAt = $createdAt;
 
         return $this;
-    }
-
-    
-    /**
-     * @ORM\PrePersist
-     */
-    public function setCreatedAtValue(): void
-    {
-        $this->createdAt = new \DateTime();
     }
 }

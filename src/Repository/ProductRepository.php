@@ -19,30 +19,6 @@ class ProductRepository extends ServiceEntityRepository
         parent::__construct($registry, Product::class);
     }
 
-
-    // Fonction DQL qui me renvoie les produits par ordre 
-    // decroissant du prix (du + au -) - Le DQL est un substitue du SQL avec des fonctions spécifiques
-    // Doctrine Query Language
-    public function findByMaxValue()
-    {
-        return $this->createQueryBuilder('p')
-            ->orderBy('p.price', 'DESC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
-    }
-
-    public function findByLaterDate()
-    {
-        return $this->createQueryBuilder('p')
-            ->orderBy('p.createdAt', 'DESC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
-    }
-
     // /**
     //  * @return Product[] Returns an array of Product objects
     //  */
