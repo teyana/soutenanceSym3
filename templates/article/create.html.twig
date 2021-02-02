@@ -8,7 +8,17 @@
 
 	<div class="container">
 		<h1>Nouvel article de blog</h1>
-		{{ form(formView) }}
-		</div>
 
-	{% endblock %}
+		{{ form_start(formView) }}
+
+		{{ form_widget(formView) }}
+
+		<button type="sunmit" class="btn btn-info">
+			Ajouter l'article</button>
+
+		{{ form_end(formView) }}
+	</div>
+
+	<br><br>
+
+{% endblock %}
