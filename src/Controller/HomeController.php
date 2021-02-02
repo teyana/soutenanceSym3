@@ -13,9 +13,6 @@ class HomeController extends AbstractController
      */
     public function index()
     {
-        return $this->render('home/home.html.twig', [
-            'title_vente' => "Meilleur vente",
-            'title_histoire' => "L'histoire / Le concept"
-        ]);
+        return $this->render('home/home.html.twig');
     }
 }
