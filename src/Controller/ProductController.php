@@ -13,7 +13,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
  * @Route("/admin", name="admin")
- * @IsGranted("ROLE_ADMIN", message ="Vous ne pouvez accéder à cette page, connectez vous en tant qu'admin !")
  */
 class ProductController extends AbstractController
 {
