@@ -66,42 +66,34 @@ class ArticleController extends AbstractController
         $builder->add('title', TextType::class, [
             'label' => 'Titre de l\'article',
             'attr' => [
-                'class' => 'form-control',
                 'placeholder' => 'Quel est le titre de votre  de l\'article?'
             ]
         ])
             ->add('resume', TextareaType::class, [
                 'label' => 'Description courte  de l\'article',
                 'attr' => [
-                    'class' => 'form-control',
                     'placeholder' => 'De quoi parle l\'article en bref?'
                 ]
             ])
             ->add('content', TextareaType::class, [
                 'label' => 'Contenu complet de l\'article',
                 'attr' => [
-                    'class' => 'form-control',
                     'placeholder' => 'Ecrivez le contenu complet de l\'article en incluant les balises html.'
                 ]
             ])
             ->add('image', TextType::class, [
                 'label' => 'Image principale de l\'article',
                 'attr' => [
-                    'class' => 'form-control',
                     'placeholder' => 'URL de l\'image'
                 ]
             ])
-            ->add('date');
-
-        $builder->add('blogCategory', EntityType::class, [
-            'label' => 'Catégorie de l\'article',
-            'attr' => [
-                'class' => 'form-control'
-            ],
-            'placeholder' => '-- Choisir une catégorie --',
-            'class' => BlogCategory::class,
-            'choice_label' => 'name'
-        ]);
+            ->add('date')
+            ->add('blogCategory', EntityType::class, [
+                'label' => 'Catégorie de l\'article',
+                'placeholder' => '-- Choisir une catégorie --',
+                'class' => BlogCategory::class,
+                'choice_label' => 'name'
+            ]);
 
         $form = $builder->getForm();
 
