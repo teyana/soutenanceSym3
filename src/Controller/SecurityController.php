@@ -72,8 +72,6 @@ class SecurityController extends AbstractController
 
         $form->handleRequest($request);
 
-        // $data = $form->getData();
-
         if ($form->isSubmitted() && $form->isValid()) {
             $data = $form->getData();
 
@@ -81,11 +79,9 @@ class SecurityController extends AbstractController
 
             $hash = $this->encoder->encodePassword($user, "password");
 
-            // $user->setEmail($data['email'])
-            //     ->setFullName($data['fullName'])
-            //     ->setPassword($hash);
-
-            // $hash = $this->encoder->encodePassword($user, "password");
+            $user->setEmail($data->getEmail());
+            $user->setFullName($data->getFullName());
+            $user->setPassword($hash);
 
             $em->persist($user);
             $em->flush();
