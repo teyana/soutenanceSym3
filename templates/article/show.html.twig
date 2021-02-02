@@ -9,7 +9,7 @@
 	<nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
 		<ol class="breadcrumb">
 			<li class="breadcrumb-item">
-				<a href="/blog">Blog</a>
+				<a href="{{ path('blog') }}">Blog</a>
 			</li>
 			<li class="breadcrumb-item">
 				<a href="{{ path('article_blogCategory', { 'blogCategory': article.blogCategory.name, 'slug': article.blogCategory.slug}) }}">{{article.blogCategory.name}}</a>
@@ -20,25 +20,26 @@
 
 	<div class="container">
 		<article class="col-11 justify-content-center">
-			<h1>{{ article.title }}</li>
-		</h1>
-		<br>
-		<small class="metadata">Publier le
-			{{ article.createdAt | date('d/m/Y')}}
-			a
-			{{ article.createdAt | date('H:i')}}
-			- Cathegorie:
-			{{ article.blogCategory.name }}</small>
-		<br>
-		<div class="content">
-			<p>
-				{{ article.resume }}
-			</p>
-			<img class="card-img-top col align-self-center" src="{{ article.image }}" alt="">
-			<hr>
-			<p>
-				{{ article.content }}
-			</p>
-		</div>
-	</article>
-</div>{% endblock %}
+			<h1>{{ article.title }}
+			</h1>
+			<br>
+			<small class="metadata">Publier le
+				{{ article.createdAt | date('d/m/Y')}}
+				a
+				{{ article.createdAt | date('H:i')}}
+				- Cathegorie:
+				{{ article.blogCategory.name }}</small>
+			<br>
+			<div class="content">
+				<p>
+					{{ article.resume }}
+				</p>
+				<img class="card-img-top col align-self-center" src="{{ article.image }}" alt="">
+				<hr>
+				<p>
+					{{ article.content }}
+				</p>
+			</div>
+		</article>
+	</div>
+{% endblock %}

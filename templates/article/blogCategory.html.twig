@@ -6,6 +6,15 @@
 {% endblock %}
 
 {% block body %}
+	<nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+		<ol class="breadcrumb">
+			<li class="breadcrumb-item">
+				<a href="{{ path('blog') }}">Blog</a>
+			</li>
+			<li class="breadcrumb-item active" aria-current="page">{{blogCategory.name}}</li>
+		</ol>
+	</nav>
+
 	<h1>Catégories :
 		{{ blogCategory.name }}</h1>
 
