@@ -75,9 +75,9 @@ class SecurityController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $data = $form->getData();
 
-            $user = new User;
+            $user = new User();
 
-            $hash = $this->encoder->encodePassword($user, "password");
+            $hash = $this->encoder->encodePassword($user, $data->getPassword());
 
             $user->setEmail($data->getEmail());
             $user->setFullName($data->getFullName());
