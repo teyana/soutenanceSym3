@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Repository\ArticleRepository;
 use App\Repository\BlogCategoryRepository;
+use App\Repository\CategoryRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
@@ -56,7 +57,7 @@ class ArticleController extends AbstractController
     /**
      * @Route("/admin/article/create", name="article_create")
      */
-    public function create(FormFactoryInterface $factory)
+    public function create(FormFactoryInterface $factory, BlogCategoryRepository $blogCategoryRepository)
     {
         $builder = $factory->createBuilder();
 
@@ -88,19 +89,22 @@ class ArticleController extends AbstractController
                     'placeholder' => 'URL de l\'image'
                 ]
             ])
-            ->add('date')
-            ->add('blogCategory', ChoiceType::class, [
-                'label' => 'Catégorie de l\'article',
-                'attr' => [
-                    'class' => 'form-control'
-                ],
-                'placeholder' => '-- Choisir une catégorie --',
-                'choices' => [
-                    'Catégorie 1' => 1,
-                    'Catégorie 2' => 2,
-                    'Catégorie 3' => 3
-                ]
-            ]);
+            ->add('date');
+
+        $options = [];
+
+        foreach ($blogCategoryRepository->findAll() as $blogCategory) {
+            $options[$blogCategory->getName()] = $blogCategory->getId();
+        }
+
+        $builder->add('blogCategory', ChoiceType::class, [
+            'label' => 'Catégorie de l\'article',
+            'attr' => [
+                'class' => 'form-control'
+            ],
+            'placeholder' => '-- Choisir une catégorie --',
+            'choices' => $options
+        ]);
 
         $form = $builder->getForm();
 
