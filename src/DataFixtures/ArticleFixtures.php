@@ -2,22 +2,47 @@
 
 namespace App\DataFixtures;
 
+use Faker\Factory;
 use App\Entity\Article;
-use Doctrine\Bundle\FixturesBundle\Fixture;
+use App\Entity\BlogCategory;
 use Doctrine\Persistence\ObjectManager;
+use Doctrine\Bundle\FixturesBundle\Fixture;
+use Symfony\Component\String\Slugger\SluggerInterface;
 
 class ArticleFixtures extends Fixture
 {
+    protected $slugger;
+
+    public function __construct(SluggerInterface $slugger)
+    {
+        $this->slugger = $slugger;
+    }
+
     public function load(ObjectManager $manager)
     {
-        for ($i = 1; $i <= 20; $i++) {
-            $article = new Article();
-            $article->setTitle("Titre de l'article n$i")
-                ->setContent("<p>Contenu de l'article n$i . Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque vitae laudantium autem tenetur repellendus iusto quis quo aliquam ipsam explicabo ipsum quod inventore velit tempore facere ea ad sequi itaque vero, doloribus temporibus ut. Ipsum rem vero asperiores eveniet, alias mollitia maxime delectus voluptas necessitatibus id iste deleniti blanditiis iure.</p>")
-                ->setImage("http://placehold.it/350x150")
-                ->setCreatedAt(new \DateTime());
+        $faker = Factory::create('fr_FR');
 
-            $manager->persist($article);
+        for ($c = 0; $c < 5; $c++) {
+            $blogCategory = new BlogCategory;
+            $blogCategory->setName($faker->text(mt_rand(6, 20)))
+                ->setSlug(strtolower($this->slugger->slug(
+                    $blogCategory->getName()
+                )));
+
+            $manager->persist($blogCategory);
+
+            for ($i = 1; $i <= mt_rand(15, 20); $i++) {
+                $article = new Article();
+                $article->setTitle($faker->sentence())
+                    ->setContent($faker->text(mt_rand(3000, 9000)))
+                    ->setResume($faker->text(mt_rand(450, 900)))
+                    ->setImage("https://picsum.photos/350/150")
+                    ->setCreatedAt(new \DateTime())
+                    ->setSlug(strtolower($this->slugger->slug($article->getTitle())))
+                    ->setBlogCategory($blogCategory);
+
+                $manager->persist($article);
+            }
         }
 
         $manager->flush();

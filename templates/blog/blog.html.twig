@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block stylesheets %}
-    <!-- Lien fichier CSS -->
+	<!-- Lien fichier CSS -->
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/style_blog/style_blog.css') }}">
 {% endblock %}
 
@@ -28,11 +28,13 @@
 							{{ article.createdAt | date('d/m/Y')}}
 							a
 							{{ article.createdAt | date('H:i')}}
-							- Cathegorie: Conseils beauté</small>
-						<img class="card-img-top" src="https://via.placeholder.com/350x150" alt="">
+							- Cathegorie:
+							{{ article.blogCategory.name }}</small>
+						<img class="card-img-top" src="{{ article.image }}" alt="">
 						<div class="content card-body">
-							{{ article.content | raw }}
-							<a href="{{ path('blog_show', {'id': article.id}) }}" class="btn btn-info btn-lg text-black">Lire la suite</a>
+							{{ article.resume | raw }}
+							<br>
+							<a href="{{ path('blog_show', { 'blogCategory_slug': article.blogCategory.slug, 'slug': article.slug}) }}" class="btn btn-info btn-lg text-black">Lire la suite</a>
 						</div>
 					</article>
 				{% endfor %}
