@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Repository\ArticleRepository;
 use App\Repository\BlogCategoryRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Form\FormFactoryInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Routing\Annotation\Route;
@@ -51,8 +52,23 @@ class ArticleController extends AbstractController
     /**
      * @Route("/admin/article/create", name="article_create")
      */
-    public function create()
+    public function create(FormFactoryInterface $factory)
     {
-        return $this->render('article/create.html.twig');
+        $builder = $factory->createBuilder();
+
+        $builder->add('title')
+            ->add('resume')
+            ->add('content')
+            ->add('image')
+            ->add('date')
+            ->add('blogCategory');
+
+        $form = $builder->getForm();
+
+        $formView = $form->createView();
+
+        return $this->render('article/create.html.twig', [
+            'formView' => $formView
+        ]);
     }
 }
