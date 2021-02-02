@@ -5,13 +5,15 @@ namespace App\Controller;
 use App\Entity\Product;
 use App\Form\ProductType;
 use App\Repository\ProductRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
- * @Route("/product")
+ * @Route("/admin", name="admin")
+ * @IsGranted("ROLE_ADMIN", message ="Vous ne pouvez accéder à cette page, connectez vous en tant qu'admin !")
  */
 class ProductController extends AbstractController
 {
@@ -19,8 +21,8 @@ class ProductController extends AbstractController
      * @Route("/", name="product_index", methods={"GET"})
      */
     public function index(ProductRepository $productRepository): Response
-    {   
-       
+    {
+
         return $this->render('product/index.html.twig', [
             'products' => $productRepository->findAll(),
         ]);
@@ -84,7 +86,7 @@ class ProductController extends AbstractController
      */
     public function delete(Request $request, Product $product): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$product->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $product->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($product);
             $entityManager->flush();
