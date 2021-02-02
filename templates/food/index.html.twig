@@ -3,7 +3,7 @@
 {% block body %}  
 {# header descriptif plus titre de la categorie #}
     <main>
-        <div class="container" style="background-color:#ff4500;">
+        <div class="container d-flex" style="background-color:#ff4500;">
             <img src="https://placehold.it/280x300" width="40%" alt="" bg-color="orange">
             <div class="text-center p-5">
                 <h1>{{ title }}</h1>
@@ -30,10 +30,10 @@
             </div>
         </div> #}
 
-
+ {# boucle permettant  d'afficher les articles en base de données #}
             <div class="container">
                 <div class = " justify-content-around row" >
-                {# boucle permettant  d'afficher les articles en base de données #}
+               
                     {% for product in products %}
                         <div class="card col-lg-3 mb-2 p-1 m-1" style="width: 16rem;">
                             <img src="https://placehold.it/280x300 " class="card-img-top" alt="...">
@@ -45,20 +45,19 @@
                                     <a href="{{ path('mode_detail',{'id':product.id})}}">
                                     <button type="button" class="btn btn-success">Ajouter au panier</button>
                                     </a>
+                                </div>
+                                <div class="col-5 mb-0"style="height: 4rem;" >
+                                    <p class="prix">{{ product.price }}</p>
+                                    <a href="{{ path('mode_detail',{'id':product.id})}}">
+                                        <button type="button" class="btn btn-warning">voir +</button>
+                                    </a>
+                                </div>
                             </div>
-                            <div class="col-5 mb-0"style="height: 4rem;" >
-                                <p class="prix">{{ product.price }}</p>
-                                <a href="{{ path('mode_detail',{'id':product.id})}}">
-                                    <button type="button" class="btn btn-warning">voir +</button>
-                                </a>
-                                
-                            </div>
-                               
-                            
                         </div>
                     {% endfor %}
-                 {#fin de boucle de base de donnée  #}
+                
                 </div>
             </div>
+             {#fin de boucle de base de donnée  #}
     </main>
 {% endblock %}

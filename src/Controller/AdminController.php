@@ -13,6 +13,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class AdminController extends AbstractController
 {
+////////////FONCTION QUI RENVOIE A L'ESPACE ADMINISTRATEUR//////////
     /**
      * @Route("/admin", name="dashboard")
      */
@@ -25,7 +26,7 @@ class AdminController extends AbstractController
         ]);
 
     }
-
+////////////FONCTION QUI RENVOIE A LA LISTE COMPLETE DES PRODUITS
     /**
      * @Route("/admin/product", name="product_index", methods={"GET"})
      */
@@ -37,7 +38,7 @@ class AdminController extends AbstractController
         ]);
     }
 
-
+////////////FONCTION QUI RENVOIE AU FORMULAIRE DE CREATION D'UN nOUVEAU PRODUIT 
      /**
      * @Route("/admin/product/new", name="product_new", methods={"GET","POST"})
      */
