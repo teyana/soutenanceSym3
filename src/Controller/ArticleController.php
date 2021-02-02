@@ -2,19 +2,30 @@
 
 namespace App\Controller;
 
+use App\Repository\BlogCategoryRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Routing\Annotation\Route;
 
 class ArticleController extends AbstractController
 {
     /**
-     * @Route("/article", name="article")
+     * @Route("blog/{slug}", name="article_blogCategory")
      */
-    public function index(): Response
+    public function blogCategory($slug, BlogCategoryRepository $blogCategoryRepository): Response
     {
-        return $this->render('article/index.html.twig', [
-            'controller_name' => 'ArticleController',
+        $blogCategory = $blogCategoryRepository->findOneBy([
+            'slug' => $slug
+        ]);
+
+        if (!$blogCategory) {
+            throw $this->createNotFoundException("La catégorie demandée n'existe pas !");
+        }
+
+        return $this->render('article/blogCategory.html.twig', [
+            'slug' => $slug,
+            'blogCategory' => $blogCategory
         ]);
     }
 }

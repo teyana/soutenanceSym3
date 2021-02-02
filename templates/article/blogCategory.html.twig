@@ -1,0 +1,34 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+	Catégories :
+	{{ slug }}
+{% endblock %}
+
+{% block body %}
+	<h1>Catégories :
+		{{ blogCategory.name }}</h1>
+
+	<div class="container">
+		<div class="row justify-content-around">
+			{% for article in blogCategory.articles %}
+				<article class="card col-lg-5 mb-2 p-2 m-1">
+					<h3 class="card-title">{{ article.title }}</h3>
+					<small class="metadata">Publier le
+						{{ article.createdAt | date('d/m/Y')}}
+						a
+						{{ article.createdAt | date('H:i')}}
+						- Cathegorie:
+						{{ article.blogCategory.name }}</small>
+					<img class="card-img-top" src="{{ article.image }}" alt="">
+					<div class="content card-body">
+						{{ article.resume | raw }}
+						<br>
+						<a href="{{ path('blog_show', {'id': article.id}) }}" class="btn btn-info btn-lg text-black">Lire la suite</a>
+					</div>
+				</article>
+			{% endfor %}
+		</div>
+	</div>
+
+{% endblock %}
