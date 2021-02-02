@@ -13,8 +13,6 @@ class ModeController extends AbstractController
     /**
      * @Route("/mode", name="mode")
      */
-
-    //FONCTION de recupération des articles avec la clé secondaire "category" dans la base de données 
     public function index(): Response
     {
         $repo = $this->getDoctrine()->getRepository(Product::class);
