@@ -3,25 +3,17 @@
 namespace App\Controller;
 
 use App\Entity\Article;
-use App\Entity\BlogCategory;
+use App\Form\ArticleType;
 use App\Repository\ArticleRepository;
-use App\Repository\BlogCategoryRepository;
-use App\Repository\CategoryRepository;
 use Doctrine\ORM\EntityManagerInterface;
-use Symfony\Bridge\Doctrine\Form\Type\EntityType;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-use Symfony\Component\Form\Extension\Core\Type\FileType;
-use Symfony\Component\Form\Extension\Core\Type\FormType;
-use Symfony\Component\Form\Extension\Core\Type\TextareaType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Form\Extension\Core\Type\UrlType;
-use Symfony\Component\Form\FormFactoryInterface;
+use App\Repository\BlogCategoryRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Form\FormFactoryInterface;
 use Symfony\Component\String\Slugger\SluggerInterface;
+use Symfony\Component\Form\Extension\Core\Type\FormType;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class ArticleController extends AbstractController
 {
@@ -67,40 +59,7 @@ class ArticleController extends AbstractController
      */
     public function create(FormFactoryInterface $factory, Request $request, SluggerInterface $slugger, EntityManagerInterface $em)
     {
-        $builder = $factory->createBuilder(FormType::class, null, [
-            'data_class' => Article::class
-        ]);
-
-        $builder->add('title', TextType::class, [
-            'label' => 'Titre de l\'article',
-            'attr' => [
-                'placeholder' => 'Quel est le titre de votre  de l\'article?'
-            ]
-        ])
-            ->add('resume', TextareaType::class, [
-                'label' => 'Description courte  de l\'article',
-                'attr' => [
-                    'placeholder' => 'De quoi parle l\'article en bref?'
-                ]
-            ])
-            ->add('content', TextareaType::class, [
-                'label' => 'Contenu complet de l\'article',
-                'attr' => [
-                    'placeholder' => 'Ecrivez le contenu complet de l\'article en incluant les balises html.'
-                ]
-            ])
-            ->add('image', UrlType::class, [
-                'label' => 'Image principale de l\'article',
-                'attr' => [
-                    'placeholder' => 'URL de l\'image'
-                ]
-            ])
-            ->add('blogCategory', EntityType::class, [
-                'label' => 'Catégorie de l\'article',
-                'placeholder' => '-- Choisir une catégorie --',
-                'class' => BlogCategory::class,
-                'choice_label' => 'name'
-            ]);
+        $builder = $factory->createBuilder(ArticleType::class);
 
         $form = $builder->getForm();
 
