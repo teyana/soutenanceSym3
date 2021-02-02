@@ -1,0 +1,26 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+	Ajouter une cathegorie
+{% endblock %}
+
+{% block body %}
+	<br>
+	<div class="container">
+		<h1>
+			Ajouter une catégorie d'article de blog
+		</h1>
+		<br>
+		{{ form_start(formView )}}
+
+		{{ form_widget(formView )}}
+
+		<button type="submit" class="btn btn-info">
+			Ajouter la catégorie
+		</button>
+		{{ form_end(formView )}}
+	</div>
+	<br><br>
+
+
+{% endblock %}
