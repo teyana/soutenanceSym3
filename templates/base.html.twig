@@ -43,25 +43,37 @@
 
 				<div class="espace_liens">
 					<div class="menu_icones">
+
 						{% if app.user %}
+
+							{% if app.user.roles[0] == "ROLE_ADMIN" %}	
+								<a href="{{ path('dashboard') }}" >
+									<i class="fas fa-suitcase mx-2"></i>
+									<p>Espace Admin</p>
+								</a>
+							{% endif %}
+
 							<a href="{{ path('security_logout') }}" class="le_compte">
-								<p>Déconnexion</p>
 								<i class="fas fa-user"></i>
+								<p>Déconnexion</p>
 							</a>
+
 						{% else %}
 							<a href="{{ path('security_new_login') }}" class="le_compte">
+								<i class="fas fa-user-plus mx-2"></i>
 								<p>Inscription</p>
-								{# <i class="fas fa-user"></i> #}
 							</a>
 							<a href="{{ path('security_login') }}" class="le_compte">
+								<i class="fas fa-user  mx-2"></i>
 								<p>Connexion</p>
-								<i class="fas fa-user"></i>
 							</a>
 						{% endif %}
 						<a href="" class="le_panier">
+							<i class="fas fa-shopping-bag  mx-2"></i>
 							<p>Panier</p>
-							<i class="fas fa-shopping-bag"></i>
 						</a>
+					
+
 					</div>
 
 					<nav class="navbar navbar-expand-lg navbar-light menu_liens">
