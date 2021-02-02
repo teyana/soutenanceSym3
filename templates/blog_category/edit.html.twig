@@ -1,0 +1,15 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+	Modifier la cathegorie d'article de blog
+	{{ blogCategory.name }}
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+		<h1>
+			Modifier la catégorie d'article de blog :</h1>
+		<h2>{{ blogCategory.name }}</h2>
+	</div>
+
+{% endblock %}
