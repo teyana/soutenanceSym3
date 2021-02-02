@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Product;
 use App\Form\ProductType;
 use App\Repository\ProductRepository;
+use App\Repository\UserRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -15,10 +16,11 @@ class AdminController extends AbstractController
     /**
      * @Route("/admin", name="dashboard")
      */
-    public function dashboard(ProductRepository $productRepository): Response
+    public function dashboard(ProductRepository $productRepository, UserRepository $userRepository): Response
     {
         return $this->render('admin/dashboard.html.twig', [
             'products' => $productRepository->findByMaxValue(),
+            'users' => $userRepository->findAll(),
             'lastproducts' => $productRepository->findByLaterDate()
         ]);
 
