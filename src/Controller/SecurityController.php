@@ -86,7 +86,7 @@ class SecurityController extends AbstractController
             $em->persist($user);
             $em->flush();
 
-            $this->addFlash('sucess', "Votre inscription est validé ! Vous pouvez vous connecter dès maintenant {$data->getFullName()}");
+            $this->addFlash('sucess', "Votre inscription est validé  {$data->getFullName()} ! Vous pouvez vous connecter dès maintenant !");
 
             return $this->redirectToRoute('security_login');
         }
