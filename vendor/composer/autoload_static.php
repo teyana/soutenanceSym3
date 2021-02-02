@@ -576,9 +576,9 @@ class ComposerStaticInit357095893e332f6f8b55dd3b8a0e315f
     );
 
     public static $classMap = array (
+        'App\\Controller\\ArticleController' => __DIR__ . '/../..' . '/src/Controller/ArticleController.php',
         'App\\Controller\\BeautyController' => __DIR__ . '/../..' . '/src/Controller/BeautyController.php',
         'App\\Controller\\BlogController' => __DIR__ . '/../..' . '/src/Controller/BlogController.php',
-        'App\\Controller\\CompteController' => __DIR__ . '/../..' . '/src/Controller/CompteController.php',
         'App\\Controller\\ContactController' => __DIR__ . '/../..' . '/src/Controller/ContactController.php',
         'App\\Controller\\FoodController' => __DIR__ . '/../..' . '/src/Controller/FoodController.php',
         'App\\Controller\\HomeController' => __DIR__ . '/../..' . '/src/Controller/HomeController.php',
@@ -590,6 +590,7 @@ class ComposerStaticInit357095893e332f6f8b55dd3b8a0e315f
         'App\\DataFixtures\\ArticleFixtures' => __DIR__ . '/../..' . '/src/DataFixtures/ArticleFixtures.php',
         'App\\DataFixtures\\ProductFixtures' => __DIR__ . '/../..' . '/src/DataFixtures/ProductFixtures.php',
         'App\\Entity\\Article' => __DIR__ . '/../..' . '/src/Entity/Article.php',
+        'App\\Entity\\BlogCategory' => __DIR__ . '/../..' . '/src/Entity/BlogCategory.php',
         'App\\Entity\\Category' => __DIR__ . '/../..' . '/src/Entity/Category.php',
         'App\\Entity\\Contact' => __DIR__ . '/../..' . '/src/Entity/Contact.php',
         'App\\Entity\\Product' => __DIR__ . '/../..' . '/src/Entity/Product.php',
@@ -599,6 +600,7 @@ class ComposerStaticInit357095893e332f6f8b55dd3b8a0e315f
         'App\\Form\\ProductType' => __DIR__ . '/../..' . '/src/Form/ProductType.php',
         'App\\Kernel' => __DIR__ . '/../..' . '/src/Kernel.php',
         'App\\Repository\\ArticleRepository' => __DIR__ . '/../..' . '/src/Repository/ArticleRepository.php',
+        'App\\Repository\\BlogCategoryRepository' => __DIR__ . '/../..' . '/src/Repository/BlogCategoryRepository.php',
         'App\\Repository\\CategoryRepository' => __DIR__ . '/../..' . '/src/Repository/CategoryRepository.php',
         'App\\Repository\\ContactRepository' => __DIR__ . '/../..' . '/src/Repository/ContactRepository.php',
         'App\\Repository\\ProductRepository' => __DIR__ . '/../..' . '/src/Repository/ProductRepository.php',

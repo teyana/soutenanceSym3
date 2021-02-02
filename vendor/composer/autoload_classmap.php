@@ -6,9 +6,9 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'App\\Controller\\ArticleController' => $baseDir . '/src/Controller/ArticleController.php',
     'App\\Controller\\BeautyController' => $baseDir . '/src/Controller/BeautyController.php',
     'App\\Controller\\BlogController' => $baseDir . '/src/Controller/BlogController.php',
-    'App\\Controller\\CompteController' => $baseDir . '/src/Controller/CompteController.php',
     'App\\Controller\\ContactController' => $baseDir . '/src/Controller/ContactController.php',
     'App\\Controller\\FoodController' => $baseDir . '/src/Controller/FoodController.php',
     'App\\Controller\\HomeController' => $baseDir . '/src/Controller/HomeController.php',
@@ -20,6 +20,7 @@ return array(
     'App\\DataFixtures\\ArticleFixtures' => $baseDir . '/src/DataFixtures/ArticleFixtures.php',
     'App\\DataFixtures\\ProductFixtures' => $baseDir . '/src/DataFixtures/ProductFixtures.php',
     'App\\Entity\\Article' => $baseDir . '/src/Entity/Article.php',
+    'App\\Entity\\BlogCategory' => $baseDir . '/src/Entity/BlogCategory.php',
     'App\\Entity\\Category' => $baseDir . '/src/Entity/Category.php',
     'App\\Entity\\Contact' => $baseDir . '/src/Entity/Contact.php',
     'App\\Entity\\Product' => $baseDir . '/src/Entity/Product.php',
@@ -29,6 +30,7 @@ return array(
     'App\\Form\\ProductType' => $baseDir . '/src/Form/ProductType.php',
     'App\\Kernel' => $baseDir . '/src/Kernel.php',
     'App\\Repository\\ArticleRepository' => $baseDir . '/src/Repository/ArticleRepository.php',
+    'App\\Repository\\BlogCategoryRepository' => $baseDir . '/src/Repository/BlogCategoryRepository.php',
     'App\\Repository\\CategoryRepository' => $baseDir . '/src/Repository/CategoryRepository.php',
     'App\\Repository\\ContactRepository' => $baseDir . '/src/Repository/ContactRepository.php',
     'App\\Repository\\ProductRepository' => $baseDir . '/src/Repository/ProductRepository.php',
