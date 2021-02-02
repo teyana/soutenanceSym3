@@ -24,7 +24,7 @@
 					<div class="content card-body">
 						{{ article.resume | raw }}
 						<br>
-						<a href="{{ path('blog_show', {'id': article.id}) }}" class="btn btn-info btn-lg text-black">Lire la suite</a>
+						<a href="{{ path('article_show', { 'blogCategory_slug': article.blogCategory.slug, 'slug': article.slug}) }}" class="btn btn-info btn-lg text-black">Lire la suite</a>
 					</div>
 				</article>
 			{% endfor %}

@@ -5,6 +5,18 @@
 {% endblock %}
 
 {% block body %}
+
+	<nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+		<ol class="breadcrumb">
+			<li class="breadcrumb-item">
+				<a href="/blog">Blog</a>
+			</li>
+			<li class="breadcrumb-item">
+				<a href="{{ path('article_blogCategory', { 'blogCategory': article.blogCategory.name, 'slug': article.blogCategory.slug}) }}">{{article.blogCategory.name}}</a>
+			</li>
+			<li class="breadcrumb-item active" aria-current="page">{{article.title}}</li>
+		</ol>
+	</nav>
 	<div class="container">
 		<article class="col-11 justify-content-center">
 			<h2>{{ article.title }}</h2>
