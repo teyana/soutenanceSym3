@@ -75,9 +75,9 @@ class SecurityController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $data = $form->getData();
 
-            $user = new User;
+            $user = new User();
 
-            $hash = $this->encoder->encodePassword($user, "password");
+            $hash = $this->encoder->encodePassword($user, $data->getPassword());
 
             $user->setEmail($data->getEmail());
             $user->setFullName($data->getFullName());
@@ -85,6 +85,8 @@ class SecurityController extends AbstractController
 
             $em->persist($user);
             $em->flush();
+
+            $this->addFlash('sucess', "Votre inscription est validé  {$data->getFullName()} ! Vous pouvez vous connecter dès maintenant !");
 
             return $this->redirectToRoute('security_login');
         }

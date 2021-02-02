@@ -14,77 +14,38 @@
 				
 			#}
 	<div class="container">
-		{% for product in products %}
 
+            
+        <div class="container">
+            <div class = "row justify-content-around p-2" >
 
-			<div class="d-flex justify-content-around p-2">
+                   {% for product in products %}
+						<div class="col-xl-4 col-lg-4 col-md-8 col-sm-12 m-auto text-center">
 
-				<div class="card" style="width: 14rem;">
-					<img src="https://placehold.it/280x300 " class="card-img-top" alt="...">
-					<div class="card-body d-flex justify-content-evenly p-2">
-						<div class="col-9">
-							<p class="name">{{ product.name }}</p>
-							<p class="origine">{{ product.origin }}</p>
+							<div class="card bg-light my-5 shadow ">
+								<h3 class="card-header">{{product.price}}</h3>
+								<img height="350px" class="rounded-circle border border-success m-2" src="{{article.image}}" alt="Card image">
+								<div class="card-body">
+									<p class="card-text">{{ product.name }}</p>
+									<a href="{{path('article_show', {'slug': article.slug}) }}" class="btn btn-primary rounded">Lire la suite</a>
+									<div class="my-3">
+									<a href="#" class="card-link">
+										{{ product.origin }}
+									</a>
+								</div>
+								</div>
+								<div class="card-footer text-muted">
+									<p class="prix">{{ product.price }}</p>
+									<a href="{{ path('mode_detail',{'id':product.id})}}">
+										<button type="button" class="btn btn-warning">voir +</button>
+									</a>                   
+								</div>
+							</div>
 						</div>
-						<div class="col-5">
-							<p class="prix">{{ product.price }}</p>
-							<a href="{{ path('mode_detail',{'id':product.id})}}">
-								<button type="button" class="btn btn-warning" style="background-color: #ff4500;">VOIR +</button>
-							</a>
-						</div>
-						{# <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> #}
-					</div>
-				</div>
-				<div class="card" style="width: 14rem;">
-					<img src="https://placehold.it/280x300" class="card-img-top" alt="...">
-					<div class="card-body d-flex justify-content-evenly p-2">
-						<div class="col-9">
-							<p class="name">{{product.name }}</p>
-							<p class="origine">{{ product.origin }}</p>
-						</div>
-						<div class="col-5">
-							<p class="prix">{{ product.price }}</p>
-							<a href="{{ path('beauty_detail',{'id':product.id})}}">
-								<button type="button" class="btn btn-warning" style="background-color: #ff4500;">VOIR +</button>
-							</a>
-						</div>
-						{# <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> #}
-					</div>
-				</div>
-				<div class="card" style="width: 14rem;">
-					<img src="https://placehold.it/280x300" class="card-img-top" alt="...">
-					<div class="card-body d-flex justify-content-evenly p-2">
-						<div class="col-9">
-							<p class="name">{{product.name }}</p>
-							<p class="origine">{{ product.origin }}</p>
-						</div>
-						<div class="col-5">
-							<p class="prix">{{ product.price }}</p>
-							<a href="{{ path('food_detail',{'id':product.id})}}">
-								<button type="button" class="btn btn-warning" style="background-color: #ff4500;">VOIR +</button>
-							</a>
-						</div>
-						{# <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> #}
-					</div>
-				</div>
-				<div class="card" style="width: 14rem;">
-					<img src="https://placehold.it/280x300" class="card-img-top" alt="...">
-					<div class="card-body d-flex justify-content-evenly p-2">
-						<div class="col-9">
-							<p class="name">{{ product.name }}</p>
-							<p class="origine">{{ product.origin }}</p>
-						</div>
-						<div class="col-5">
-							<p class="prix">{{ product.price }}</p>
-							<a href="{{ path('mode_detail',{'id':product.id})}}">
-								<button type="button" class="btn btn-warning" style="background-color: #ff4500;">VOIR +</button>
-							</a>
-						</div>
-						{# <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> #}
-					</div>
-				</div>
-			</div>
-		{% endfor %}
-	</div>
+                   {% endfor %}
+				   
+    
+
+        </div>
 
 {% endblock %}
