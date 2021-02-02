@@ -576,8 +576,10 @@ class ComposerStaticInit5a7df1894b58357e7f4b62de14339130
     );
 
     public static $classMap = array (
+        'App\\Controller\\AdminController' => __DIR__ . '/../..' . '/src/Controller/AdminController.php',
         'App\\Controller\\ArticleController' => __DIR__ . '/../..' . '/src/Controller/ArticleController.php',
         'App\\Controller\\BeautyController' => __DIR__ . '/../..' . '/src/Controller/BeautyController.php',
+        'App\\Controller\\BlogCategoryController' => __DIR__ . '/../..' . '/src/Controller/BlogCategoryController.php',
         'App\\Controller\\BlogController' => __DIR__ . '/../..' . '/src/Controller/BlogController.php',
         'App\\Controller\\CartController' => __DIR__ . '/../..' . '/src/Controller/CartController.php',
         'App\\Controller\\ContactController' => __DIR__ . '/../..' . '/src/Controller/ContactController.php',
@@ -596,6 +598,8 @@ class ComposerStaticInit5a7df1894b58357e7f4b62de14339130
         'App\\Entity\\Contact' => __DIR__ . '/../..' . '/src/Entity/Contact.php',
         'App\\Entity\\Product' => __DIR__ . '/../..' . '/src/Entity/Product.php',
         'App\\Entity\\User' => __DIR__ . '/../..' . '/src/Entity/User.php',
+        'App\\Form\\ArticleType' => __DIR__ . '/../..' . '/src/Form/ArticleType.php',
+        'App\\Form\\BlogCategoryType' => __DIR__ . '/../..' . '/src/Form/BlogCategoryType.php',
         'App\\Form\\ContactType' => __DIR__ . '/../..' . '/src/Form/ContactType.php',
         'App\\Form\\LoginType' => __DIR__ . '/../..' . '/src/Form/LoginType.php',
         'App\\Form\\ProductType' => __DIR__ . '/../..' . '/src/Form/ProductType.php',
