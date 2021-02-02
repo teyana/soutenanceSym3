@@ -1,0 +1,24 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+	Créez un compte
+{% endblock %}
+
+{% block body %}
+	{# <h1 class="titre_page">Inscription</h1> #}
+	<div class="container p-5">
+		<h2>Créez votre compte</h2>
+
+		{{ form_start(formView) }}
+
+		{{ form_errors(formView) }}
+
+		{{ form_widget(formView) }}
+
+		<button type="submit" class="btn btn-dark">Inscription !</button>
+
+		{{ form_end(formView) }}
+
+
+	</div>
+{% endblock %}

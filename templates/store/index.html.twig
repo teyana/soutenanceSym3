@@ -1,14 +1,21 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{title}}{% endblock %}
+{% block title %}
+	{{title}}
+{% endblock %}
 
 {% block body %}
 
-    <h1 class="titre_page" >{{ title }}</h1>
-{#
------> Refaire la page 
-    Catalogue affichage de tout les produits
-    Afficher 4 cartes par lignes
+	<h1 class="titre_page">{{ title }}</h1>
+	{#
+				-----> Refaire la page 
+				Catalogue affichage de tout les produits
+				Afficher 4 cartes par lignes
+				
+			#}
+	<div class="container">
+		{% for product in products %}
+
 
 #}
     

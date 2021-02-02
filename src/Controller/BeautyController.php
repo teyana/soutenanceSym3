@@ -27,23 +27,24 @@ class BeautyController extends AbstractController
             'price' => '5e',
             'origin' => 'Abidjan',
             'products' => $products
-            
+
         ]);
     }
     /**
      * @Route("/beauty/{id}", name="beauty_detail")
      */
 
-     public function show($id){
+    public function show($id)
+    {
 
-        $repo = $this -> getDoctrine()->getRepository(Product::class);
+        $repo = $this->getDoctrine()->getRepository(Product::class);
 
         $product = $repo->find($id);
 
-         return $this->render('beauty/detail.html.twig',[
+        return $this->render('beauty/detail.html.twig', [
             'title' => 'Beauty Product',
             'product'=> $product
         
         ]);
-     }
+    }
 }

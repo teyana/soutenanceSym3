@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Controller;
+
 use App\Entity\Category;
 use App\Entity\Product;
 use Symfony\Component\HttpFoundation\Response;
@@ -28,10 +29,10 @@ class ModeController extends AbstractController
             'price' => '15e',
             'origin' => 'Egypte',
             'products' => $products
-        
+
         ]);
     }
-     /**
+    /**
      * @Route("/mode/{id}", name="mode_detail")
      */
         // FONCTION de recupération d'une fiche détail d'article après avoir cliqué dessus. 
@@ -41,7 +42,7 @@ class ModeController extends AbstractController
 
         $product = $repo->find($id);
 
-        return $this->render('mode/detail.html.twig',[
+        return $this->render('mode/detail.html.twig', [
             'product' => $product,
             'title' => 'Mode Product',
         ]);

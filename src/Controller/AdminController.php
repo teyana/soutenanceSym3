@@ -16,7 +16,7 @@ class AdminController extends AbstractController
     /**
      * @Route("/admin", name="dashboard")
      */
-    public function dashboard(ProductRepository $productRepository): Response
+    public function dashboard(ProductRepository $productRepository ): Response
     {
         return $this->render('admin/dashboard.html.twig', [
             'products' => $productRepository->findByMaxValue(),

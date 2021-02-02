@@ -43,11 +43,22 @@
 
 				<div class="espace_liens">
 					<div class="menu_icones">
-						<a href="{{ path('compte') }}" class="le_compte">
-							<p>Compte</p>
-							<i class="fas fa-user"></i>
-						</a>
-						<a class="le_panier">
+						{% if app.user %}
+							<a href="{{ path('security_logout') }}" class="le_compte">
+								<p>Déconnexion</p>
+								<i class="fas fa-user"></i>
+							</a>
+						{% else %}
+							<a href="{{ path('security_new_login') }}" class="le_compte">
+								<p>Inscription</p>
+								{# <i class="fas fa-user"></i> #}
+							</a>
+							<a href="{{ path('security_login') }}" class="le_compte">
+								<p>Connexion</p>
+								<i class="fas fa-user"></i>
+							</a>
+						{% endif %}
+						<a href="" class="le_panier">
 							<p>Panier</p>
 							<i class="fas fa-shopping-bag"></i>
 						</a>
@@ -82,10 +93,6 @@
 									<a class="nav-link active" href="{{ asset('/contact') }}">Contact</a>
 								</li>
 							</ul>
-							<form class="form-inline" role="search" id="nav-search-form" method="post" action="">
-								<input class="form-control mr-sm-2" type="search" placeholder="Recherche" aria-label="Search" name="search">
-								<button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Search</button>
-							</form>
 						</div>
 					</nav>
 				</div>
@@ -98,7 +105,7 @@
 				<div class="container">
 					<h2 class="social-links mt-3 text-center">Contactez-nous !</h2>
 					<div class="social-links mt-3 text-center">
-						<a href="mailto:contact@E-concept-store.fr">
+						<a href="{{ path('contact')}}">
 							<i class="fa fa-envelope-open" aria-hidden="true"></i>
 						</a>
 						<a class="ic-lin" href="">

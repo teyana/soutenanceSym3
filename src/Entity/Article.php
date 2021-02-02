@@ -37,9 +37,28 @@ class Article
      */
     private $createdAt;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $slug;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $resume;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=BlogCategory::class, inversedBy="articles")
+     */
+    private $blogCategory;
+
     public function getId(): ?int
     {
         return $this->id;
+    }
+    public function getUppercaseName(): string
+    {
+        return strtoupper($this->title);
     }
 
     public function getTitle(): ?string
@@ -86,6 +105,42 @@ class Article
     public function setCreatedAt(\DateTimeInterface $createdAt): self
     {
         $this->createdAt = $createdAt;
+
+        return $this;
+    }
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    public function setSlug(string $slug): self
+    {
+        $this->slug = $slug;
+
+        return $this;
+    }
+
+    public function getResume(): ?string
+    {
+        return $this->resume;
+    }
+
+    public function setResume(string $resume): self
+    {
+        $this->resume = $resume;
+
+        return $this;
+    }
+
+    public function getBlogCategory(): ?BlogCategory
+    {
+        return $this->blogCategory;
+    }
+
+    public function setBlogCategory(?BlogCategory $blogCategory): self
+    {
+        $this->blogCategory = $blogCategory;
 
         return $this;
     }
