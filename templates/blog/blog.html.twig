@@ -21,7 +21,7 @@
 		<h1 class="titre_section">Articles recents</h1>
 		<div class="container">
 			<div class="row justify-content-around">
-				{% for article in articles %}
+				{% for article in articles | reverse %}
 					<article class="card col-lg-5 mb-2 p-2 m-1">
 						<h3 class="card-title">{{ article.title }}</h3>
 						<small class="metadata">Publier le

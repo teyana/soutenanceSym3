@@ -36,6 +36,15 @@ class ArticleRepository extends ServiceEntityRepository
     }
     */
 
+    public function findLastArticles($value)
+    {
+        return $this->createQueryBuilder('a')
+            ->orderBy('a.createdAt', 'ASC')
+            ->setMaxResults($value)
+            ->getQuery()
+            ->getResult();
+    }
+
     /*
     public function findOneBySomeField($value): ?Article
     {
