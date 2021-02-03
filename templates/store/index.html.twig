@@ -24,10 +24,10 @@
 
 							<div class="card bg-light my-5 shadow ">
 								<h3 class="card-header">{{product.price}}</h3>
-								<img height="350px" class="rounded-circle border border-success m-2" src="{{article.image}}" alt="Card image">
+								<img height="350px" class="rounded-circle border border-success m-2" src="{{product.image}}" alt="Card image">
 								<div class="card-body">
 									<p class="card-text">{{ product.name }}</p>
-									<a href="{{path('article_show', {'slug': article.slug}) }}" class="btn btn-primary rounded">Lire la suite</a>
+									<a href="{{path('product_show', {'id': product.id}) }}" class="btn btn-primary rounded">Lire la suite</a>
 									<div class="my-3">
 									<a href="#" class="card-link">
 										{{ product.origin }}
