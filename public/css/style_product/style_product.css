@@ -1,7 +1,7 @@
 .section_fond_rouge {
     border: 1px solid black;
     background-color: rgb(223, 58, 58);
-    margin-bottom: 2em;
+    margin-bottom: 4em;
     position: static;
 }
 
