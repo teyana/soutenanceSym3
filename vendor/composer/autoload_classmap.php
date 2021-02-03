@@ -33,6 +33,7 @@ return array(
     'App\\Form\\ContactType' => $baseDir . '/src/Form/ContactType.php',
     'App\\Form\\LoginType' => $baseDir . '/src/Form/LoginType.php',
     'App\\Form\\ProductType' => $baseDir . '/src/Form/ProductType.php',
+    'App\\Form\\UserType' => $baseDir . '/src/Form/UserType.php',
     'App\\Kernel' => $baseDir . '/src/Kernel.php',
     'App\\Repository\\ArticleRepository' => $baseDir . '/src/Repository/ArticleRepository.php',
     'App\\Repository\\BlogCategoryRepository' => $baseDir . '/src/Repository/BlogCategoryRepository.php',

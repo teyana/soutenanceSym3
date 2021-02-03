@@ -4,12 +4,18 @@
 	Nouvel utilisateur
 {% endblock %}
 
+{% block stylesheets %}
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/lux/bootstrap.min.css" crossorigin="anonymous">
+{% endblock %}
+
 {% block body %}
-	<div class="container">
-		<h1>Créez un nouvel utilisateur</h1>
-		<div>
-			{{ include('admin/user/_form.html.twig') }}
+	<div class="container border shadow col-8">
+		<div class="alert">
+			<h1>Créez un nouvel utilisateur</h1>
+			<div>
+				{{ include('admin/user/_form.html.twig') }}
+			</div>
+			<a class="btn btn-dark my-2 mx-2" href="{{ path('user_index') }}">Retour</a>
 		</div>
-		<a href="{{ path('user_index') }}">back to list</a>
 	</div>
 {% endblock %}

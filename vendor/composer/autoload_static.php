@@ -603,6 +603,7 @@ class ComposerStaticInit5a7df1894b58357e7f4b62de14339130
         'App\\Form\\ContactType' => __DIR__ . '/../..' . '/src/Form/ContactType.php',
         'App\\Form\\LoginType' => __DIR__ . '/../..' . '/src/Form/LoginType.php',
         'App\\Form\\ProductType' => __DIR__ . '/../..' . '/src/Form/ProductType.php',
+        'App\\Form\\UserType' => __DIR__ . '/../..' . '/src/Form/UserType.php',
         'App\\Kernel' => __DIR__ . '/../..' . '/src/Kernel.php',
         'App\\Repository\\ArticleRepository' => __DIR__ . '/../..' . '/src/Repository/ArticleRepository.php',
         'App\\Repository\\BlogCategoryRepository' => __DIR__ . '/../..' . '/src/Repository/BlogCategoryRepository.php',
