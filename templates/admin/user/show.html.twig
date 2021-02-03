@@ -4,6 +4,10 @@
 	Fiche d'un utilisateur
 {% endblock %}
 
+{% block stylesheets %}
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/lux/bootstrap.min.css" crossorigin="anonymous">
+{% endblock %}
+
 {% block body %}
 	<div class="container">
 		<h1 class="text-center">{{ user.fullName }}</h1>
