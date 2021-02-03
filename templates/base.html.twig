@@ -11,6 +11,7 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com">
 		<link
 		href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
+
 		<!-- Link Bootstrap (Js/JQuery) -->
 		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
@@ -19,132 +20,118 @@
 		rel="icon" href="{{ asset('logo.png') }}" type="image/png" sizes="16x16">
 
 		<!-- Link Bootstrap (CSS) -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
 		{# <link
-		rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous"> #}
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/lux/bootstrap.min.css" crossorigin="anonymous">
+			rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/lux/bootstrap.min.css" crossorigin="anonymous"> #}
 
 		<!-- Lien vers fontawesome-->
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-		<meta
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"> <meta
 		name="viewport" content="width=device-width, initial-scale=1.0">
-
 		<!-- Lien fichier CSS -->
 		<link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}"> {% block stylesheets %}{% endblock %}
-
 		</head>
-
 		<body>
 			{# header + navbar #}
 			<div class="head_nav">
 				<figure class="espace_logo">
-					<a href="{{ asset('/') }}"><img src="{{ asset('images/logo.png') }}" alt="Image du logo"></a>
+					<a href="{{ asset('/') }}">
+						<img src="{{ asset('images/logo.png') }}" alt="Image du logo"></a>
 					<p class="marque">E-Concept Store</p>
-				</figure>
-
-				<div class="espace_liens">
-					<div class="menu_icones">
-
-						{% if app.user %}
-
-							{% if app.user.roles[0] == "ROLE_ADMIN" %}	
-								<a href="{{ path('dashboard') }}" >
-									<i class="fas fa-suitcase mx-2"></i>
-									<p>Espace Admin</p>
-								</a>
-							{% endif %}
-
-							<a href="{{ path('security_logout') }}" class="le_compte">
-								<i class="fas fa-user"></i>
-								<p>Déconnexion</p>
-							</a>
-
-						{% else %}
-							<a href="{{ path('security_new_login') }}" class="le_compte">
-								<i class="fas fa-user-plus mx-2"></i>
-								<p>Inscription</p>
-							</a>
-							<a href="{{ path('security_login') }}" class="le_compte">
-								<i class="fas fa-user  mx-2"></i>
-								<p>Connexion</p>
-							</a>
-						{% endif %}
-						<a href="" class="le_panier">
-							<i class="fas fa-shopping-bag  mx-2"></i>
-							<p>Panier</p>
-						</a>
-					
-
-					</div>
-
-					<nav class="navbar navbar-expand-lg navbar-light menu_liens">
-						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-							<span class="navbar-toggler-icon"></span>
-						</button>
-						<div class="collapse navbar-collapse" id="navbarNavDropdown">
-							<ul class="navbar-nav">
-								<li class="nav-item active">
-									<a class="nav-link" href="{{ asset('/') }}">Accueil
-										<span class="sr-only">(current)</span>
-									</a>
-								</li>
-								<li class="nav-item active dropdown">
-									<a class="nav-link dropdown-toggle" href="{{ asset('/store') }}" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-										Store
-									</a>
-									<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-										<a class="dropdown-item" href="{{ asset('/mode') }}">Mode</a>
-										<a class="dropdown-item" href="{{ asset('/beauty') }}">Cosmétique</a>
-										<a class="dropdown-item" href="{{ asset('/food') }}">Alimentation</a>
-										<a class="dropdown-item" href="{{ asset('/store') }}">Voir tout</a>
-									</div>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link active" href="{{ asset('/blog') }}">Blog</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link active" href="{{ asset('/contact') }}">Contact</a>
-								</li>
-							</ul>
-						</div>
-					</nav>
-				</div>
-			</div>
-
-			{% block body %}{% endblock %}
-
-
-			<footer id="footer">
-				<div class="container">
-					<h2 class="social-links mt-3 text-center">Contactez-nous !</h2>
-					<div class="social-links mt-3 text-center">
-						<a href="{{ path('contact')}}">
-							<i class="fa fa-envelope-open" aria-hidden="true"></i>
-						</a>
-						<a class="ic-lin" href="">
-							<i class="fab fa-linkedin-in"></i>
-						</a>
-						<a class="ic-twit" href="">
-							<i class="fab fa-twitter"></i>
-						</a>
-					</div>
-
-					<div class="copyright">
-						<p>&copy; Copyright 2021
-							<strong>
-								<span>
-									<a href="{{ path('home') }}">E-Concept Store</a>
-								</span>
-							</strong>
-						</p>
-					</div>
-				</div>
-
-				{% block footer%}{% endblock %}
-			</footer>
-
-
-			<script src="https://cdn.jsdelivr.net/npm/axentix@0.5.3/dist/js/axentix.min.js"></script>
-			{% block javascripts %}{% endblock %}
+				</head>
+			</html>
 		</body>
 	</html>
-</body></html></body></html>
+</figure>
+<div class="espace_liens">
+	<div class="menu_icones">
+
+		{% if app.user %}
+
+			{% if app.user.roles[0] == "ROLE_ADMIN" %}
+				<a href="{{ path('dashboard') }}">
+					<i class="fas fa-suitcase mx-2"></i>
+					<p>Espace Admin</p>
+				</a>
+			{% endif %}
+
+			<a href="{{ path('security_logout') }}" class="le_compte">
+				<i class="fas fa-user mx-2"></i>
+				<p>Déconnexion</p>
+			</a>
+
+		{% else %}
+			<a href="{{ path('security_new_login') }}" class="le_compte">
+				<i class="fas fa-user-plus mx-2"></i>
+				<p>Inscription</p>
+			</a>
+			<a href="{{ path('security_login') }}" class="le_compte">
+				<i class="fas fa-user  mx-2"></i>
+				<p>Connexion</p>
+			</a>
+		{% endif %}
+		<a href="" class="le_panier">
+			<i class="fas fa-shopping-bag  mx-2"></i>
+			<p>Panier</p>
+		</a>
+
+
+	</div>
+
+	<nav class="navbar navbar-expand-lg navbar-light menu_liens">
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNavDropdown">
+			<ul class="navbar-nav">
+				<li class="nav-item active">
+					<a class="nav-link" href="{{ asset('/') }}">Accueil
+						<span class="sr-only">(current)</span>
+					</a>
+				</li>
+				<li class="nav-item active dropdown">
+					<a class="nav-link dropdown-toggle" href="{{ asset('/store') }}" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Store
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+						<a class="dropdown-item" href="{{ asset('/mode') }}">Mode</a>
+						<a class="dropdown-item" href="{{ asset('/beauty') }}">Cosmétique</a>
+						<a class="dropdown-item" href="{{ asset('/food') }}">Alimentation</a>
+						<a class="dropdown-item" href="{{ asset('/store') }}">Voir tout</a>
+					</div>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link active" href="{{ asset('/blog') }}">Blog</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link active" href="{{ asset('/contact') }}">Contact</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+</div></div>{% block body %}{% endblock %}<footer id="footer">
+<div class="container">
+	<h2 class="social-links mt-3 text-center">Contactez-nous !</h2>
+	<div class="social-links mt-3 text-center">
+		<a href="{{ path('contact')}}">
+			<i class="fa fa-envelope-open" aria-hidden="true"></i>
+		</a>
+		<a class="ic-lin" href="">
+			<i class="fab fa-linkedin-in"></i>
+		</a>
+		<a class="ic-twit" href="">
+			<i class="fab fa-twitter"></i>
+		</a>
+	</div>
+
+	<div class="copyright">
+		<p>&copy; Copyright 2021
+			<strong>
+				<span>
+					<a href="{{ path('home') }}">E-Concept Store</a>
+				</span>
+			</strong>
+		</p>
+	</div>
+</div>
+{% block footer%}{% endblock %}</footer><script src="https://cdn.jsdelivr.net/npm/axentix@0.5.3/dist/js/axentix.min.js"></script>{% block javascripts %}{% endblock %}</body></html></body></html></body></html>

@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-	New Product
+	Modifier l'utilisateur
 {% endblock %}
 
 {% block stylesheets %}
@@ -10,12 +10,12 @@
 
 {% block body %}
 	<div class="container border shadow col-8">
-		<div class="alert">
-			<h1 class="text-center my-5">Créer un nouveau Produit</h1>
-			<div>
-				{{ include('product/_form.html.twig') }}
-			</div>
-			<a class="btn btn-dark my-2" href="{{ path('product_index') }}">Retour</a>
-		</div>
+		<h1 class="text-center">Modifier les informations</h1>
+
+		{{ include('admin/user/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
+
+		{{ include('admin/user/_delete_form.html.twig') }}
+
+		<a class="btn btn-dark my-2 mx-2" href="{{ path('user_index') }}">Retour</a>
 	</div>
 {% endblock %}
