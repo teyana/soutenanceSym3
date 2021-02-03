@@ -65,7 +65,7 @@ class ArticleController extends AbstractController
 
         $form->handleRequest($request);
 
-        if ($form->isSubmitted($request)) {
+        if ($form->isSubmitted() && $form->isValid()) {
             $article->setSlug(strtolower($slugger->slug($article->getTitle())));
 
             $em->persist($article);
@@ -95,7 +95,7 @@ class ArticleController extends AbstractController
 
         $form->handleRequest($request);
 
-        if ($form->isSubmitted($request)) {
+        if ($form->isSubmitted() && $form->isValid()) {
             $em->flush();
 
             return $this->redirectToRoute('article_show', [
