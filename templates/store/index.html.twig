@@ -7,39 +7,45 @@
 {% block body %}
 
 	<h1 class="titre_page">{{ title }}</h1>
+	{#
+				-----> Refaire la page 
+				Catalogue affichage de tout les produits
+				Afficher 4 cartes par lignes
+				
+			#}
 	<div class="container">
 
+            
+        <div class="container">
+            <div class = "row justify-content-around p-2" >
 
-		<div class="container">
-			<div class="row justify-content-around p-2">
+                   {% for product in products %}
+						<div class="col-xl-4 col-lg-4 col-md-8 col-sm-12 m-auto text-center">
 
-				{% for product in products %}
-					<div class="col-xl-4 col-lg-4 col-md-8 col-sm-12 m-auto text-center">
-
-						<div class="card bg-light my-5 shadow ">
-							<h3 class="card-header">{{product.price}}</h3>
-							<img height="350px" class="border border-success m-2" src="{{product.image}}" alt="Card image">
-							<div class="card-body">
-								<p class="card-text">{{product.price}}
-									€</p>
-
-								<div class="my-3">
+							<div class="card bg-light my-5 shadow ">
+								<h3 class="card-header">{{product.price}}</h3>
+								<img height="350px" class="rounded-circle border border-success m-2" src="{{product.image}}" alt="Card image">
+								<div class="card-body">
+									<p class="card-text">{{ product.name }}</p>
+									<a href="{{path('product_show', {'id': product.id}) }}" class="btn btn-primary rounded">Lire la suite</a>
+									<div class="my-3">
 									<a href="#" class="card-link">
 										{{ product.origin }}
 									</a>
 								</div>
-							</div>
-							<div class="card-footer text-muted">
-								<a href="{{ path('mode_detail',{'id':product.id})}}">
-									<button type="button" class="btn btn-success">Ajouter au panier</button>
-								</a>
-								<a href="{{ path('mode_detail',{'id':product.id})}}">
-									<button type="button" class="btn btn-warning">voir +</button>
-								</a>
+								</div>
+								<div class="card-footer text-muted">
+									<p class="prix">{{ product.price }}</p>
+									<a href="{{ path('mode_detail',{'id':product.id})}}">
+										<button type="button" class="btn btn-warning">voir +</button>
+									</a>                   
+								</div>
 							</div>
 						</div>
-					</div>
-				{% endfor %}
-			</div>
+                   {% endfor %}
+				   
+    
 
-		{% endblock %}
+        </div>
+
+{% endblock %}

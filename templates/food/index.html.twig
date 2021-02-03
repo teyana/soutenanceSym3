@@ -1,72 +1,70 @@
 {% extends 'base.html.twig' %}
 
 {% block stylesheets %}
-	<!-- Lien fichier CSS -->
+    <!-- Lien fichier CSS -->
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/style_product/style_product.css') }}">
 {% endblock %}
-{% block body %}
-	{# header descriptif plus titre de la categorie #}
-	<main>
-		<section class="section_fond_rouge">
-			<h1 class="text-center mt-3">{{ title }}</h1>
-			<figure class="photo_fond_rouge">
-				<img src="{{ asset('images/food/juice.jpg') }}" alt="Photo d'un jus bio" title="Jus Bio">
-			</figure>
-		</section>
-		{# fin de header #}
+{% block body %}  
+{# header descriptif plus titre de la categorie #}
+    <main>
+    <h1 class="titre_page">Alimentation</h1>
+    <section class="section_fond_rouge">
+        <figure class="photo_fond_rouge">
+            <img  src="{{ asset('images/food/juice.jpg') }}" alt="Photo d'un jus bio" title="Jus Bio">
+        </figure>
+	</section>
+{# fin de header #}
 
-		{# Pour plus tard un encart permettant de filtré les resultat et les produit  qui s'affiche #}
-		{# <div class="container">
-		            <div class="row">
-		                <div class="col-sm p-3 border">
-		                    Filtres
-		                </div>
-		                <div class="col-sm p-3 border">
-		                    Lorem ipsum
-		                </div>
-		                <div class="col-sm p-3 border">
-		                    Lorem ipsum
-		                </div>
-		                <div class="col-sm p-3 border">
-		                    Lorem ipsum
-		                </div>
-		            </div>
-		        </div> #}
+{# Pour plus tard un encart permettant de filtré les resultat et les produit  qui s'affiche #}
+        {# <div class="container">
+            <div class="row">
+                <div class="col-sm p-3 border">
+                    Filtres
+                </div>
+                <div class="col-sm p-3 border">
+                    Lorem ipsum
+                </div>
+                <div class="col-sm p-3 border">
+                    Lorem ipsum
+                </div>
+                <div class="col-sm p-3 border">
+                    Lorem ipsum
+                </div>
+            </div>
+        </div> #}
 
-		{# boucle permettant  d'afficher les articles en base de données #}
-			<div class="container"> <div class=" justify-content-around row">
+ {# boucle permettant  d'afficher les articles en base de données #}
+            <div class="container">
+                <div class = " justify-content-around row" >
+               
+                    {% for product in products %}
+						<div class="col-xl-4 col-lg-4 col-md-8 col-sm-12 m-auto text-center">
 
-				{% for product in products %}
-					<div class="col-xl-4 col-lg-4 col-md-8 col-sm-12 m-auto text-center">
-
-						<div class="card bg-light my-5 shadow ">
-							<h3 class="card-header">{{ product.name }}</h3>
-							<img src="https://placehold.it/280x300 " class="card-img-top" alt="...">
-							<div class="card-body">
-								<p class="card-text">{{product.price}}
-									€</p>
-
-								<div class="my-3">
+							<div class="card bg-light my-5 shadow ">
+								<h3 class="card-header">{{product.price}}</h3>
+								<img height="350px" class="rounded-circle border border-success m-2" src="{{article.image}}" alt="Card image">
+								<div class="card-body">
+									<p class="card-text">{{ product.name }}</p>
+									<a href="{{path('article_show', {'slug': article.slug}) }}" class="btn btn-primary rounded">Lire la suite</a>
+									<div class="my-3">
 									<a href="#" class="card-link">
 										{{ product.origin }}
 									</a>
 								</div>
-							</div>
-							<div class="card-footer text-muted">
-								<a href="{{ path('mode_detail',{'id':product.id})}}">
-									<button type="button" class="btn btn-success">Ajouter au panier</button>
-								</a>
-								<a href="{{ path('mode_detail',{'id':product.id})}}">
-									<button type="button" class="btn btn-warning">voir +</button>
-								</a>
+								</div>
+								<div class="card-footer text-muted">
+									<p class="prix">{{ product.price }}</p>
+									<a href="{{ path('mode_detail',{'id':product.id})}}">
+										<button type="button" class="btn btn-warning">voir +</button>
+									</a>                   
+								</div>
 							</div>
 						</div>
-					</div>
-				{% endfor %}
-
-
-			</div>
-		</div>
-		{#fin de boucle de base de donnée  #}
-	</main>
+                   {% endfor %}
+        
+                
+                </div>
+            </div>
+             {#fin de boucle de base de donnée  #}
+    </main>
 {% endblock %}
