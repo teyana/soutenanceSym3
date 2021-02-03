@@ -1,72 +1,75 @@
 {% extends 'base.html.twig' %}
 
-{% block body %}  
+{% block stylesheets %}
+	<!-- Lien fichier CSS -->
+	<link rel="stylesheet" type="text/css" href="{{ asset('css/style_product/style_product.css') }}">
+{% endblock %}
 
-    <main>
-    {# header descriptif plus titre de la categorie #}
-        <div class="container d-flex" style="background-color:#ff4500;">
-            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fblog.thebeardclub.com%2Fwp-content%2Fuploads%2F2018%2F08%2Fsunflower-oil.jpg&f=1&nofb=1" width="40%" alt="" bg-color="orange">
-            <div class="text-center p-5">
-                <h1>Beauté</h1>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora temporibus mollitia, at aliquid voluptates quidem delectus quam similique perspiciatis praesentium, vero inventore repellat? Quisquam accusamus at voluptates nam sed odio? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores minus eveniet voluptas culpa, ex saepe nesciunt cum obcaecati dolore adipisci, voluptatem quam inventore ipsam rem laudantium aut rerum sint quibusdam? Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur accusantium odio nesciunt natus accusamus. Fugit quos inventore sequi labore. Unde totam corrupti hic maiores praesentium suscipit quae molestiae accusamus voluptas?</p>
-            </div>
-        </div>
-    {# fin de header #}
+{% block body %}
 
-    
-    {# Pour plus tard un encart permettant de filtré les resultat et les produit  qui s'affiche #}
-        {# <div class="container">
-            <div class="row">
-                <div class="col-sm p-3 border">
-                    Filtres
-                </div>
-                <div class="col-sm p-3 border">
-                    Lorem ipsum
-                </div>
-                <div class="col-sm p-3 border">
-                    Lorem ipsum
-                </div>
-                <div class="col-sm p-3 border">
-                    Lorem ipsum
-                </div>
-            </div>
-        </div> #}
+	<main>
+		{# header descriptif plus titre de la categorie #}
+		<section class="section_fond_rouge">
+			<h1 class="text-center mt-3">{{ title }}</h1>
+			<figure class="photo_fond_rouge">
+				<img src="{{ asset('images/beauty/bathroom.jpg') }}" alt="Photo d'une salle de bain" title="Salle de bain">
+			</figure>
+		</section>
+		{# fin de header #}
 
 
-        
-            
-        <div class="container">
-            <div class = "row justify-content-around " >
-                 {# boucle permettant  d'afficher les articles en base de données #}
-                    {% for product in products %}
-						<div class="col-xl-4 col-lg-4 col-md-8 col-sm-12 m-auto text-center">
+		{# Pour plus tard un encart permettant de filtré les resultat et les produit  qui s'affiche #}
+		{# <div class="container">
+		            <div class="row">
+		                <div class="col-sm p-3 border">
+		                    Filtres
+		                </div>
+		                <div class="col-sm p-3 border">
+		                    Lorem ipsum
+		                </div>
+		                <div class="col-sm p-3 border">
+		                    Lorem ipsum
+		                </div>
+		                <div class="col-sm p-3 border">
+		                    Lorem ipsum
+		                </div>
+		            </div>
+		        </div> #}
 
-							<div class="card bg-light my-5 shadow ">
-								<h3 class="card-header">{{ product.name }}</h3>
-								<img src="https://placehold.it/280x300 " class="card-img-top" alt="...">
-								<div class="card-body">
-									<p class="card-text">{{product.price}} €</p>
-									
-									<div class="my-3">
+
+			<div class="container"> <div
+				class="row justify-content-around ">
+				{# boucle permettant  d'afficher les articles en base de données #}
+				{% for product in products %}
+					<div class="col-xl-4 col-lg-4 col-md-8 col-sm-12 m-auto text-center">
+
+						<div class="card bg-light my-5 shadow ">
+							<h3 class="card-header">{{ product.name }}</h3>
+							<img src="https://placehold.it/280x300 " class="card-img-top" alt="...">
+							<div class="card-body">
+								<p class="card-text">{{product.price}}
+									€</p>
+
+								<div class="my-3">
 									<a href="#" class="card-link">
 										{{ product.origin }}
 									</a>
 								</div>
-								</div>
-								<div class="card-footer text-muted">
-									<a href="{{ path('mode_detail',{'id':product.id})}}">
-                                     <button type="button" class="btn btn-success">Ajouter au panier</button>
-                                    </a>
-									<a href="{{ path('mode_detail',{'id':product.id})}}">
-										<button type="button" class="btn btn-warning">voir +</button>
-									</a>                   
-								</div>
+							</div>
+							<div class="card-footer text-muted">
+								<a href="{{ path('mode_detail',{'id':product.id})}}">
+									<button type="button" class="btn btn-success">Ajouter au panier</button>
+								</a>
+								<a href="{{ path('mode_detail',{'id':product.id})}}">
+									<button type="button" class="btn btn-warning">voir +</button>
+								</a>
 							</div>
 						</div>
-                   {% endfor %}
-        
-               {#fin de boucle de base de donnée #}
-            </div>
-        </div>        
-    </main>
+					</div>
+				{% endfor %}
+
+				{#fin de boucle de base de donnée #}
+			</div>
+		</div>
+	</main>
 {% endblock %}
