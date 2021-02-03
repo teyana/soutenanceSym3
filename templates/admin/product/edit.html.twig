@@ -1,18 +1,25 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Product{% endblock %}
+{% block title %}
+	Edit Product
+{% endblock %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/lux/bootstrap.min.css" crossorigin="anonymous">
+{% endblock %}
 
 {% block body %}
-    <h1 class="my-5 text-center">Modifier: {{product.name}} </h1>
-    <div class="container">
+	<div class="container border shadow col-8">
+		<h1 class="my-5 text-center">Modifier:
+			{{product.name}}
+		</h1>
+		<div class="container">
 
+			{{ include('admin/product/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
 
-        {{ include('admin/product/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
+			<a class="btn btn-warning my-2 mx-2" href="{{ path('product_index') }}">Retour</a>
 
-        <a class="btn my-2 btn-warning" href="{{ path('product_index') }}">Retour à la liste des produits</a>
-
-        {{ include('admin/product/_delete_form.html.twig') }}
-    </div>
-
-   
+			{{ include('admin/product/_delete_form.html.twig') }}
+		</div>
+	</div>
 {% endblock %}
