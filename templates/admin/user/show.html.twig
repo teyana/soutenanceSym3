@@ -33,9 +33,9 @@
 			</tbody>
 		</table>
 		<div class="d-flex justify-content-center m-2">
-			<a class="btn btn-dark mx-2" href="{{ path('user_index') }}">Retour</a>
+			<a class="btn btn-dark my-2 mx-2" href="{{ path('user_index') }}">Retour</a>
 
-			<a class="btn btn-success mx-2" href="{{ path('user_edit', {'id': user.id}) }}">Modifier</a>
+			<a class="btn btn-success my-2 mx-2" href="{{ path('user_edit', {'id': user.id}) }}">Modifier</a>
 
 			{{ include('admin/user/_delete_form.html.twig') }}
 		</div>

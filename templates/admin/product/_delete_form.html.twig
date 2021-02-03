@@ -1,5 +1,5 @@
-<form method="post" class="my-2" action="{{ path('product_delete', {'id': product.id}) }}" onsubmit="return confirm('Etes vous sur de vouloir supprimer ?');">
-    <input type="hidden" name="_method" value="DELETE">
-    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ product.id) }}">
-    <button class="btn btn-danger">Supprimer</button>
+<form method="post" class="mx-2" action="{{ path('product_delete', {'id': product.id}) }}" onsubmit="return confirm('Etes vous sur de vouloir supprimer ?');">
+	<input type="hidden" name="_method" value="DELETE">
+	<input type="hidden" name="_token" value="{{ csrf_token('delete' ~ product.id) }}">
+	<button class="btn btn-danger my-2">Supprimer</button>
 </form>
