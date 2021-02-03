@@ -23,11 +23,11 @@
 						<div class="col-xl-4 col-lg-4 col-md-8 col-sm-12 m-auto text-center">
 
 							<div class="card bg-light my-5 shadow ">
-								<h3 class="card-header">{{product.price}}</h3>
-								<img height="350px" class="rounded-circle border border-success m-2" src="{{article.image}}" alt="Card image">
+								<h3 class="card-header">{{ product.name }}</h3>
+								<img src="https://placehold.it/280x300 " class="card-img-top" alt="...">
 								<div class="card-body">
-									<p class="card-text">{{ product.name }}</p>
-									<a href="{{path('article_show', {'slug': article.slug}) }}" class="btn btn-primary rounded">Lire la suite</a>
+									<p class="card-text">{{product.price}} €</p>
+									
 									<div class="my-3">
 									<a href="#" class="card-link">
 										{{ product.origin }}
@@ -35,7 +35,9 @@
 								</div>
 								</div>
 								<div class="card-footer text-muted">
-									<p class="prix">{{ product.price }}</p>
+									<a href="{{ path('mode_detail',{'id':product.id})}}">
+                                     <button type="button" class="btn btn-success">Ajouter au panier</button>
+                                    </a>
 									<a href="{{ path('mode_detail',{'id':product.id})}}">
 										<button type="button" class="btn btn-warning">voir +</button>
 									</a>                   
@@ -43,6 +45,7 @@
 							</div>
 						</div>
                    {% endfor %}
+        
 				   
     
 
