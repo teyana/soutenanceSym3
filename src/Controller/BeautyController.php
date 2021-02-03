@@ -15,11 +15,11 @@ class BeautyController extends AbstractController
      */
     public function index(): Response
     {
-        $repo =$this -> getDoctrine()->getRepository(Product::class);
-        
-        $products = $repo->findByCategory(11);
-            
-        
+        $repo = $this->getDoctrine()->getRepository(Product::class);
+
+        $products = $repo->findByCategory(24);
+
+
 
         return $this->render('beauty/index.html.twig', [
             'title' => 'Beauty Product',
@@ -43,8 +43,8 @@ class BeautyController extends AbstractController
 
         return $this->render('beauty/detail.html.twig', [
             'title' => 'Beauty Product',
-            'product'=> $product
-        
+            'product' => $product
+
         ]);
     }
 }

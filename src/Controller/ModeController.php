@@ -14,13 +14,13 @@ class ModeController extends AbstractController
      * @Route("/mode", name="mode")
      */
 
-     //FONCTION de recupération des articles avec la clé secondaire "category" dans la base de données 
+    //FONCTION de recupération des articles avec la clé secondaire "category" dans la base de données 
     public function index(): Response
     {
-        
-        $repo =$this -> getDoctrine()->getRepository(Product::class);
-        $products = $repo->findByCategory(10);
-       
+
+        $repo = $this->getDoctrine()->getRepository(Product::class);
+        $products = $repo->findByCategory(22);
+
 
 
         return $this->render('mode/index.html.twig', [
@@ -35,10 +35,11 @@ class ModeController extends AbstractController
     /**
      * @Route("/mode/{id}", name="mode_detail")
      */
-        // FONCTION de recupération d'une fiche détail d'article après avoir cliqué dessus. 
-    public function show($id){
-        
-        $repo = $this -> getDoctrine()->getRepository(Product::class);
+    // FONCTION de recupération d'une fiche détail d'article après avoir cliqué dessus. 
+    public function show($id)
+    {
+
+        $repo = $this->getDoctrine()->getRepository(Product::class);
 
         $product = $repo->find($id);
 
