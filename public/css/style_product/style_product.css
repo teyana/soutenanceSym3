@@ -13,6 +13,9 @@
     left: 2em;
 }
 
+button{
+    background-color: rgb(223, 58, 58);
+}
 
 .titre_section {
     text-align: center;
